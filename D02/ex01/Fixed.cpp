@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/28 15:34:02 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/11/29 13:28:24 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/11/30 14:26:52 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,21 @@ Fixed::Fixed(Fixed const & fixed)
 	return ;
 }
 
+
+Fixed::Fixed(int const num)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->_fixed_point_val = num << this->_fractional_bits;
+	return ;
+}
+
+Fixed::Fixed(float const num)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->_fixed_point_val = roundf(num * (1 << this->_fractional_bits));
+	return ;
+}
+
 Fixed::~Fixed(void)
 {
 	std::cout << "Destructor called" << std::endl;
@@ -39,9 +54,15 @@ Fixed &	Fixed::operator=(Fixed const & rhs)
 	return (*this);
 }
 
+std::ostream & operator<<(std::ostream & stream, Fixed const & rhs)
+{
+	stream << rhs.toFloat();
+	return stream;
+}
+
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	std::cout << "GetRawBits member function called" << std::endl;
 	return (this->_fixed_point_val);
 }
 
@@ -50,4 +71,14 @@ void	Fixed::setRawBits(int const raw)
 	std::cout << "SetRawBits member function called" << std::endl;
 	this->_fixed_point_val = raw;
 	return ;
+}
+
+float	Fixed::toFloat(void) const
+{
+	return ((float)this->_fixed_point_val / (1 << this->_fractional_bits));
+}
+
+int		Fixed::toInt(void) const
+{
+	return (this->_fixed_point_val >> this->_fractional_bits);
 }

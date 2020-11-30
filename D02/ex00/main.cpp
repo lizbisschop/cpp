@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/28 15:32:32 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/11/28 15:33:43 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/11/29 10:31:21 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(void)
 {
     Fixed a;
-    Fixed b;
+    Fixed b( a );
     Fixed c;
 
     c = b;

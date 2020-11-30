@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/18 11:43:42 by liz           #+#    #+#                 */
-/*   Updated: 2020/10/18 15:19:18 by liz           ########   odam.nl         */
+/*   Updated: 2020/11/28 15:25:48 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ Weapon::~Weapon(void)
 	return ;
 }
 
-std::string Weapon::getType(void)
+std::string const& Weapon::getType(void)
 {
-	return (this->_type);
+	std::string const& ref = this->_type; 
+	return (ref);
 }
 
 void Weapon::setType(std::string str)

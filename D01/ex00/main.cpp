@@ -6,15 +6,12 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 15:03:48 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/07/31 13:05:53 by liz           ########   odam.nl         */
+/*   Updated: 2020/11/28 13:12:57 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pony.hpp"
 #include <iostream>
-
-//stack is is without allocatoin with new and delete
-//Heap is without new and delete
 
 void    ponyOnTheStack(void)
 {

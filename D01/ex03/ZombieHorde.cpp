@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/27 17:53:25 by liz           #+#    #+#                 */
-/*   Updated: 2020/11/12 12:36:56 by liz           ########   odam.nl         */
+/*   Updated: 2020/11/28 14:48:14 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ std::string ZombieHorde::randomChump(void)
 	int index;
 	int nbr;
 	nbr = 5;
-	std::string names[] {"Heather", "Carl", "George", "Frieda", "Brozo"};
+	std::string names[] = {"Heather", "Carl", "George", "Frieda", "Brozo"};
 	index = rand() % nbr;
 	return (names[index]);
 }

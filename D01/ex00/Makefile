@@ -1,0 +1,35 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: lbisscho <lbisscho@student.codam.nl>         +#+                      #
+#                                                    +#+                       #
+#    Created: 2020/11/28 13:10:02 by lbisscho      #+#    #+#                  #
+#    Updated: 2020/11/28 13:11:08 by lbisscho      ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = pony
+
+SRCS = main.cpp Pony.cpp
+
+HPP = Pony.hpp
+
+FLAGS = -Wall -Werror -Wextra
+
+OBJ = $(SRCS:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJ) $(HPP)
+	clang++ $(FLAGS) $(OBJ) -o $@
+%.o: %.cpp %.hpp
+	clang++ $(FLAGS) -c $< -o $@
+
+clean:
+	rm -rf $(OBJ)
+
+fclean: clean
+	rm -rf $(NAME)
+re: fclean all

@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 15:54:09 by liz           #+#    #+#                 */
-/*   Updated: 2020/10/03 11:28:51 by liz           ########   odam.nl         */
+/*   Updated: 2020/11/28 13:42:50 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ public:
 	~Zombie(void);
 	std::string announce(void);
 private:
-	std::string _name;
 	std::string _type;	
+	std::string _name;
 };
 
 #endif

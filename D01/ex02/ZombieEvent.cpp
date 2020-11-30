@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 15:54:14 by liz           #+#    #+#                 */
-/*   Updated: 2020/10/03 11:36:21 by liz           ########   odam.nl         */
+/*   Updated: 2020/11/28 13:43:05 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Zombie *ZombieEvent::randomChump(void)
 	int index;
 	int nbr;
 	Zombie *zombie;
-	std::string names[] {"Heather", "Carl", "George", "Frieda", "Brozo"};
+	std::string names[] = {"Heather", "Carl", "George", "Frieda", "Brozo"};
 	nbr = 5;
 	index = rand() % nbr;
 	zombie = newZombie(names[index]);

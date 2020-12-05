@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/29 15:27:33 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/04 11:33:58 by liz           ########   odam.nl         */
+/*   Updated: 2020/12/04 11:52:43 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ FragTrap::FragTrap(std::string n)
 FragTrap::FragTrap(FragTrap const & other)
 {
 	std::cout << "(Frag) Pop pop!" << std::endl;
-
 	*this = other;
 	return ;
 }

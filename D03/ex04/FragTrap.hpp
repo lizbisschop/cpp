@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   FragTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/29 15:34:03 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/12 15:38:38 by lbisscho      ########   odam.nl         */
+/*   Created: 2020/11/29 15:16:36 by lbisscho      #+#    #+#                 */
+/*   Updated: 2020/12/12 14:55:49 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int	main(void)
-{
-	FragTrap trap("James");
-	FragTrap trap2;
+#include <iostream>
+#include "ClapTrap.hpp"
 
-	trap.vaulthunter_dot_exe("Cyberman");
-	trap.rangedAttack("Giner bread man");
-	trap.takeDamage(20);
-	trap.takeDamage(60);
-	trap.takeDamage(50);
-	trap.beRepaired(40);
-	FragTrap trapCopy = trap;
-	trapCopy.vaulthunter_dot_exe("Steamer");
-	
-}
+class   FragTrap : public virtual ClapTrap {
+public:
+    FragTrap(void);
+    FragTrap(std::string n);
+    FragTrap(FragTrap const & rhs);
+    FragTrap & operator=(FragTrap const & rhs);
+    ~FragTrap(void);
+    void    vaulthunter_dot_exe(std::string const & target);
+};
+
+#endif

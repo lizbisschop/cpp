@@ -5,25 +5,22 @@
 /*                                                     +:+                    */
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/29 15:34:03 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/12 15:38:38 by lbisscho      ########   odam.nl         */
+/*   Created: 2020/12/12 16:46:10 by lbisscho      #+#    #+#                 */
+/*   Updated: 2020/12/12 17:10:29 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "Sorcerer.hpp"
+#include "Victim.hpp"
+#include "Peon.hpp"
 
-int	main(void)
+int main()
 {
-	FragTrap trap("James");
-	FragTrap trap2;
-
-	trap.vaulthunter_dot_exe("Cyberman");
-	trap.rangedAttack("Giner bread man");
-	trap.takeDamage(20);
-	trap.takeDamage(60);
-	trap.takeDamage(50);
-	trap.beRepaired(40);
-	FragTrap trapCopy = trap;
-	trapCopy.vaulthunter_dot_exe("Steamer");
-	
+Sorcerer robert("Robert", "the Magnificent");
+Victim jim("Jimmy");
+Peon joe("Joe");
+std::cout << robert << jim << joe;
+robert.polymorph(jim);
+robert.polymorph(joe);
+return 0;
 }

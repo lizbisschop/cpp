@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   NinjaTrap.hpp                                      :+:    :+:            */
+/*   ScavTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/12/04 11:42:54 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/12 14:03:24 by lbisscho      ########   odam.nl         */
+/*   Created: 2020/12/03 11:58:51 by liz           #+#    #+#                 */
+/*   Updated: 2020/12/03 16:39:50 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-#define NINJATRAP_HPP
+#ifndef SCAFTRAP_HPP
+#define SCAFTRAP_HPP
 
 #include <iostream>
 #include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 
-class NinjaTrap : public ClapTrap {
+class ScavTrap : public ClapTrap {
 public:
-	NinjaTrap(void);
-	NinjaTrap(std::string n);
-	NinjaTrap(NinjaTrap const & other);
-	NinjaTrap & operator=(NinjaTrap const & rhs);
-	~NinjaTrap(void);
-	void	NinjaShoebox(ClapTrap const &clap);
-	void	NinjaShoebox(FragTrap const &frag);
-	void	NinjaShoebox(ScavTrap const &scav);
-	void	NinjaShoebox(NinjaTrap const &ninja);
+	ScavTrap(void);
+	ScavTrap(std::string n);
+	ScavTrap(ScavTrap const & other);
+	ScavTrap & operator=(ScavTrap const & rhs);
+	~ScavTrap(void);
+	void	challengeNewcomer(std::string const & target);
 };
 
 #endif

@@ -6,12 +6,13 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/29 15:34:03 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/03 14:49:52 by liz           ########   odam.nl         */
+/*   Updated: 2020/12/12 14:10:32 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 int	main(void)
 {
@@ -31,4 +32,8 @@ int	main(void)
 	ScavTrap scav("Diego");
 	scav.takeDamage(50);
 	scav.challengeNewcomer("Mr poptart");
+
+	NinjaTrap ninja("Nini");
+	ninja.NinjaShoebox(trap);
+	ninja.NinjaShoebox(scav);
 }

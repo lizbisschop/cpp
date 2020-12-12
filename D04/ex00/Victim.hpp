@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Victim.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/29 15:34:03 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/12 15:38:38 by lbisscho      ########   odam.nl         */
+/*   Created: 2020/12/12 16:48:18 by lbisscho      #+#    #+#                 */
+/*   Updated: 2020/12/12 17:21:40 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef VICTIM_HPP
+#define VICTIM_HPP
 
-int	main(void)
-{
-	FragTrap trap("James");
-	FragTrap trap2;
+#include <iostream>
 
-	trap.vaulthunter_dot_exe("Cyberman");
-	trap.rangedAttack("Giner bread man");
-	trap.takeDamage(20);
-	trap.takeDamage(60);
-	trap.takeDamage(50);
-	trap.beRepaired(40);
-	FragTrap trapCopy = trap;
-	trapCopy.vaulthunter_dot_exe("Steamer");
-	
-}
+class Victim {
+public:
+  Victim(std::string n);
+  Victim(void);
+  Victim const & operator=(Victim const & rhs);
+  ~Victim(void);
+
+    std::string getName(void);
+    std::string getTitle(void);
+    void    getPolymorphed() const;
+private:
+    std::string _name;
+};
+
+std::ostream & operator<<(std::ostream &stream, Victim & rhs);
+
+
+#endif

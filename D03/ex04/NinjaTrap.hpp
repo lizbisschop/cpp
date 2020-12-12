@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/04 11:42:54 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/12 14:03:24 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/12 14:55:39 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class NinjaTrap : public ClapTrap {
+class NinjaTrap : public virtual ClapTrap {
 public:
 	NinjaTrap(void);
 	NinjaTrap(std::string n);

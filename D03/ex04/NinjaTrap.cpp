@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/04 11:42:36 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/12 15:44:05 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/12 15:44:44 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 NinjaTrap::NinjaTrap(void)
 {
-	std::cout << "(Ninja) Can I just say... yeehaw" << std::endl;
+	std::cout << "(Ninja) Can I just say... yeehaw." << std::endl;
 	setName("unkown");
 	setHitPoints(60);
 	setMaxHitPoints(60);
@@ -29,7 +29,7 @@ NinjaTrap::NinjaTrap(void)
 
 NinjaTrap::NinjaTrap(std::string n)
 {
-	std::cout << "(Ninja) Can I just say... yeehaw" << std::endl;
+	std::cout << "(Ninja) Can I just say... yeehaw." << std::endl;
 	setName(n);
 	setHitPoints(60);
 	setMaxHitPoints(60);

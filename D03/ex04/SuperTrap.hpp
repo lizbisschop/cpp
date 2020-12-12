@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   SuperTrap.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/29 15:34:03 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/12 15:38:38 by lbisscho      ########   odam.nl         */
+/*   Created: 2020/12/12 14:22:08 by lbisscho      #+#    #+#                 */
+/*   Updated: 2020/12/12 15:39:04 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SUPERTRAP_HPP
+#define SUPERTRAP_HPP
+
+#include <iostream>
+#include "NinjaTrap.hpp"
+#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
-int	main(void)
-{
-	FragTrap trap("James");
-	FragTrap trap2;
+class SuperTrap : public FragTrap, public NinjaTrap {
+public:
+    SuperTrap(void);
+    SuperTrap(std::string n);
+    SuperTrap const & operator=(SuperTrap const & rhs);
+    ~SuperTrap(void);
 
-	trap.vaulthunter_dot_exe("Cyberman");
-	trap.rangedAttack("Giner bread man");
-	trap.takeDamage(20);
-	trap.takeDamage(60);
-	trap.takeDamage(50);
-	trap.beRepaired(40);
-	FragTrap trapCopy = trap;
-	trapCopy.vaulthunter_dot_exe("Steamer");
-	
-}
+    void meleeAttack(std::string target);
+    void rangedAttack(std::string target);
+private:
+};
+
+#endif

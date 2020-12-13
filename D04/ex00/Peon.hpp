@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 17:05:33 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/12 17:21:48 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/13 16:46:53 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 #define PEON_HPP
 
 #include <iostream>
+#include "Victim.hpp"
 
-class Peon {
+class Peon : public Victim{
 public:
   Peon(std::string n);
   Peon(void);
+  Peon(Peon const & rhs);
   Peon const & operator=(Peon const & rhs);
   ~Peon(void);
-
-    std::string getName(void);
-    std::string getTitle(void);
-    void    getPolymorphed() const;
-private:
-    std::string _name;
 };
 
-std::ostream & operator<<(std::ostream &stream, Peon& rhs);
+std::ostream & operator<<(std::ostream &stream, Peon & rhs);
 
 
 #endif

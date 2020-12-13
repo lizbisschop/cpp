@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   RadScorpion.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/12/12 16:46:10 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 16:39:52 by lbisscho      ########   odam.nl         */
+/*   Created: 2020/12/13 18:09:48 by lbisscho      #+#    #+#                 */
+/*   Updated: 2020/12/13 18:10:05 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
-#include "Peon.hpp"
-#include "Stooge.hpp"
+#ifndef RADSCORPION_HPP
+#define RADSCORPION_HPP
 
-int main()
-{
-Sorcerer robert("Robert", "the Magnificent");
-Victim jim("Jimmy");
-Stooge jacob("Jacob");
-Peon joe("Joe");
-std::cout << robert << jim << joe << jacob;
-robert.polymorph(jim);
-robert.polymorph(joe);
-robert.polymorph(jacob);
-return 0;
-}
+#include <iostream>
+#include "Enemy.hpp"
+
+class RadScorpion : public Enemy {
+public:
+    RadScorpion(void);
+    RadScorpion(RadScorpion const & rhs);
+    RadScorpion const & operator=(RadScorpion const & rhs);
+    ~RadScorpion(void);
+};
+
+#endif

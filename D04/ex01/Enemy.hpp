@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Enemy.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/12/12 16:46:10 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 16:39:52 by lbisscho      ########   odam.nl         */
+/*   Created: 2020/12/13 17:57:20 by lbisscho      #+#    #+#                 */
+/*   Updated: 2020/12/13 18:00:42 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
-#include "Peon.hpp"
-#include "Stooge.hpp"
+#ifndef ENEMY_HPP
+#define ENEMY_HPP
 
-int main()
-{
-Sorcerer robert("Robert", "the Magnificent");
-Victim jim("Jimmy");
-Stooge jacob("Jacob");
-Peon joe("Joe");
-std::cout << robert << jim << joe << jacob;
-robert.polymorph(jim);
-robert.polymorph(joe);
-robert.polymorph(jacob);
-return 0;
-}
+#include <iostream>
+
+class Enemy {
+public:
+    Enemy(int hp, std::string const & type);
+    Enemy(void);
+    Enemy(Enemy const & rhs);
+    Enemy const & operator=(Enemy const & rhs);
+    ~Enemy(void);
+
+    std::string getType() const;
+    int     getHP() const;
+    virtual void    takeDamage(int);
+private:
+    int     _hp;
+    std::string _type;
+};
+
+#endif

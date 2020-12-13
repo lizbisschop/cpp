@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Victim.hpp                                         :+:    :+:            */
+/*   AWeapon.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/12/12 16:48:18 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 17:18:07 by lbisscho      ########   odam.nl         */
+/*   Created: 2020/12/13 17:26:25 by lbisscho      #+#    #+#                 */
+/*   Updated: 2020/12/13 17:53:51 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-#define VICTIM_HPP
+#ifndef AWEAPON_HPP
+#define AWEAPON_HPP
 
 #include <iostream>
 
-class Victim {
+class AWeapon {
 public:
-  Victim(std::string n);
-  Victim(void);
-  Victim(Victim const & rhs);
-  Victim const & operator=(Victim const & rhs);
-  ~Victim(void);
-    void    setName(std::string name);
-    std::string getName(void) const;
-    std::string getTitle(void) const;
-    void    getPolymorphed() const;
+    AWeapon(std::string const & name, int apcost, int damage);
+    AWeapon(void);
+    AWeapon(AWeapon const & rhs);
+    AWeapon const & operator=(AWeapon const & rhs);
+    ~AWeapon(void);
+
+    int     getAPCost() const;
+    int     getDamage() const;
+    virtual void    attack() const = 0;
 private:
     std::string _name;
+    int         _apcost;
+    int         _damage;
 };
-
-std::ostream & operator<<(std::ostream &stream, Victim & rhs);
-
 
 #endif

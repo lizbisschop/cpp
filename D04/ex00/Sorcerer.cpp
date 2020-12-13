@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 16:25:24 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/12 17:23:42 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/13 16:59:25 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ Sorcerer::Sorcerer(void)
     this->_name = "Magino";
     this->_title = "Novice";
     std::cout << this->_name << ", " << this->_title <<  ", is born!" << std::endl;
+    return ;
+}
+
+Sorcerer::Sorcerer(Sorcerer const & rhs)
+{
+    *this = rhs;
     return ;
 }
 

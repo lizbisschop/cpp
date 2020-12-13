@@ -6,21 +6,28 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 17:05:09 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/12 17:20:03 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/13 17:18:49 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Peon.hpp"
 
-Peon::Peon(std::string n): _name(n)
+Peon::Peon(std::string n)
 {
+    this->Victim::setName(n);
     std::cout << "Zog zog." << std::endl;
 }
 
 Peon::Peon(void)
 {
-    this->_name = "Peondolo";
+    this->Victim::setName("Peondolo");
     std::cout << "Zog zog." << std::endl;
+}
+
+Peon::Peon(Peon const & rhs)
+{
+    *this = rhs;
+    return ;
 }
 
 Peon::~Peon(void)
@@ -30,22 +37,12 @@ Peon::~Peon(void)
 
 Peon const & Peon::operator=(Peon const & rhs)
 {
-    this->_name = rhs._name;
+    this->Victim::setName(rhs.getName());
     return (*this);
-}
-
-std::string Peon::getName(void)
-{
-    return (this->_name);
-}
-
-void        Peon::getPolymorphed() const
-{
-    std::cout << this->_name << " has been turned into a pink pony!" << std::endl; 
 }
 
 std::ostream & operator<<(std::ostream & stream, Peon & rhs)
 {
-    stream << "I'm " << rhs.getName() << " and I like otters!" << std::endl;
+    stream << "I'm " << rhs.Victim::getName() << " and I like otters!" << std::endl;
     return (stream);
 }

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Stooge.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/12/12 16:46:10 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 16:39:52 by lbisscho      ########   odam.nl         */
+/*   Created: 2020/12/13 16:31:19 by lbisscho      #+#    #+#                 */
+/*   Updated: 2020/12/13 16:47:00 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
-#include "Peon.hpp"
-#include "Stooge.hpp"
+#ifndef STOOGE_HPP
+#define STOOGE_HPP
 
-int main()
-{
-Sorcerer robert("Robert", "the Magnificent");
-Victim jim("Jimmy");
-Stooge jacob("Jacob");
-Peon joe("Joe");
-std::cout << robert << jim << joe << jacob;
-robert.polymorph(jim);
-robert.polymorph(joe);
-robert.polymorph(jacob);
-return 0;
-}
+#include <iostream>
+#include "Victim.hpp"
+
+class Stooge : public Victim {
+public:
+    Stooge(std::string n);
+    Stooge(void);
+    Stooge(Stooge const & rhs);
+    Stooge const & operator=(Stooge const & rhs);
+    ~Stooge(void);
+};
+std::ostream & operator<<(std::ostream &stream, Stooge & rhs);
+
+#endif

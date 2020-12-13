@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Enemy.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/12/12 16:46:10 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 16:39:52 by lbisscho      ########   odam.nl         */
+/*   Created: 2020/12/13 18:01:05 by lbisscho      #+#    #+#                 */
+/*   Updated: 2020/12/13 18:02:13 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
-#include "Peon.hpp"
-#include "Stooge.hpp"
-
-int main()
+Enemy::Enemy(int hp, std::string const & type): _hp(hp), _type(type)
 {
-Sorcerer robert("Robert", "the Magnificent");
-Victim jim("Jimmy");
-Stooge jacob("Jacob");
-Peon joe("Joe");
-std::cout << robert << jim << joe << jacob;
-robert.polymorph(jim);
-robert.polymorph(joe);
-robert.polymorph(jacob);
-return 0;
+    return ;
+}
+
+Enemy::Enemy(void)
+{
+    return ;
+}
+
+Enemy(Enemy const & rhs)
+{
+    *this = rhs;
+    return ;
+}
+
+Enemy::~Enemy(void)
+{
+    return ;
+}
+
+Enemy const & Enemy::operator=(Enemy const & rhs)
+{
+    this->_name = rhs._name;
+    this->_apcost = rhs._apcost;
+    this->_damage = rhs._damage;
+    return (*this);
 }

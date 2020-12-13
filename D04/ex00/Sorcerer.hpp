@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 16:23:46 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/12 17:23:03 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/13 16:46:36 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ class Sorcerer {
 public:
     Sorcerer(std::string n, std::string t);
     Sorcerer(void);
+    Sorcerer(Sorcerer const & rhs);
     Sorcerer const & operator=(Sorcerer const & rhs);
     ~Sorcerer(void);
 
+    void    setName(std::string name);
     std::string getName(void);
     std::string getTitle(void);
     void    polymorph(Victim const &) const;

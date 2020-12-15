@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:46:05 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 18:08:26 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/14 17:52:40 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PlasmaRifle::PlasmaRifle(void): AWeapon("Plasma Rifle", 5, 21)
     return ;
 }
 
-PlasmaRifle(PlasmaRifle const & rhs)
+PlasmaRifle::PlasmaRifle (PlasmaRifle const & rhs)
 {
     *this = rhs;
     return ;

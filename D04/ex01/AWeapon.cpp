@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:31:05 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 17:52:21 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/14 11:51:20 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,16 @@ AWeapon const & AWeapon::operator=(AWeapon const & rhs)
     this->_apcost = rhs._apcost;
     this->_damage = rhs._damage;
     return (*this);
+}
+
+int     AWeapon::getAPCost(void)
+{
+    return (this->_apcost);
+}
+
+int     AWeapon::getDamage(void)
+{
+    return (this->_damage);
 }
 
 void    AWeapon::attack() const

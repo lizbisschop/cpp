@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 18:01:05 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 18:02:13 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/14 12:04:55 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,21 @@ Enemy(Enemy const & rhs)
 Enemy::~Enemy(void)
 {
     return ;
+}
+
+std::string     Enemy::getType(void) const
+{
+    return (this->_type);
+}
+
+int             Enemy:::getHP(void) const
+{
+    return (this->_hp);
+}
+
+void            Enemy::setHP(int damage)
+{
+    this->_hp -= damage;
 }
 
 Enemy const & Enemy::operator=(Enemy const & rhs)

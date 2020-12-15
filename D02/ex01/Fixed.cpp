@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/28 15:34:02 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/11/30 14:26:52 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/14 10:24:01 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ Fixed::Fixed(float const num)
 {
 	std::cout << "Float constructor called" << std::endl;
 	this->_fixed_point_val = roundf(num * (1 << this->_fractional_bits));
-	return ;
 }
 
 Fixed::~Fixed(void)
@@ -62,13 +61,11 @@ std::ostream & operator<<(std::ostream & stream, Fixed const & rhs)
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "GetRawBits member function called" << std::endl;
 	return (this->_fixed_point_val);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "SetRawBits member function called" << std::endl;
 	this->_fixed_point_val = raw;
 	return ;
 }

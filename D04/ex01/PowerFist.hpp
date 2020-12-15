@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:49:56 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 17:50:34 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/14 11:34:13 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     PowerFist(void);
     PowerFist(PowerFist const & rhs);
     PowerFist const & operator=(PowerFist const & rhs);
-    ~PowerFist(void);
+    virtual ~PowerFist(void);
 };
 
 #endif

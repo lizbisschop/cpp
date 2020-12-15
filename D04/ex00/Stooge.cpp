@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 16:33:32 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 17:20:50 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/14 10:44:37 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ Stooge const & Stooge::operator=(Stooge const & rhs)
 
 std::ostream & operator<<(std::ostream & stream, Stooge & rhs)
 {
-    std::cout << "hello" << std::endl;
     stream << "I'm " << rhs.Victim::getName() << " and I like cats!" << std::endl;
     return (stream);
 }

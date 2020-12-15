@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:40:57 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 17:50:42 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/14 11:34:01 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     PlasmaRifle(void);
     PlasmaRifle(PlasmaRifle const & rhs);
     PlasmaRifle const & operator=(PlasmaRifle const & rhs);
-    ~PlasmaRifle(void);
+    virtual ~PlasmaRifle(void);
 };
 
 #endif

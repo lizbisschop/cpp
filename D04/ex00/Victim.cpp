@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 16:51:18 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 17:19:55 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/14 10:39:59 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 Victim::Victim(std::string n)
 {
     setName(n);
-    std::cout << "Some random victim called" << this->_name << " just appeared!" << std::endl;
+    std::cout << "Some random victim called " << this->_name << " just appeared!" << std::endl;
 }
 
 Victim::Victim(void)
 {
     this->setName("Victoria");
-    std::cout << "Some random victim called" << this->_name << " just appeared!" << std::endl;
+    std::cout << "Some random victim called " << this->_name << " just appeared!" << std::endl;
 }
 
 Victim::Victim(Victim const & rhs)

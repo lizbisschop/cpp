@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:26:25 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 17:53:51 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/14 11:33:45 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     AWeapon(void);
     AWeapon(AWeapon const & rhs);
     AWeapon const & operator=(AWeapon const & rhs);
-    ~AWeapon(void);
+    virtual ~AWeapon(void);
 
     int     getAPCost() const;
     int     getDamage() const;

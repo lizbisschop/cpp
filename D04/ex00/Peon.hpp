@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 17:05:33 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 16:46:53 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/14 10:38:04 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
   Peon(void);
   Peon(Peon const & rhs);
   Peon const & operator=(Peon const & rhs);
-  ~Peon(void);
+  virtual ~Peon(void);
 };
 
 std::ostream & operator<<(std::ostream &stream, Peon & rhs);

@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:57:20 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/14 12:03:49 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/15 10:36:10 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ public:
 	Enemy(void);
 	Enemy(Enemy const & rhs);
 	Enemy const & operator=(Enemy const & rhs);
-	virtul ~Enemy(void);
+	virtual ~Enemy(void);
 
 	std::string getType(void) const;
 	int     getHP(void) const;
 	void	setHP(int damage);
+	void	setType(std::string type);
 	virtual void    takeDamage(int);
 private:
 	int     _hp;

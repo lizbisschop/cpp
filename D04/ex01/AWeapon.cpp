@@ -6,13 +6,13 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:31:05 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/14 11:51:20 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/15 11:27:54 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon(std::string n, int apcost, int damage): _name(n), _apcost(apcost), _damage(damage)
+AWeapon::AWeapon(std::string const & name, int apcost, int damage): _name(name), _apcost(apcost), _damage(damage)
 {
     return ;
 }
@@ -22,7 +22,7 @@ AWeapon::AWeapon(void)
     return ;
 }
 
-AWeapon(AWeapon const & rhs)
+AWeapon::AWeapon(AWeapon const & rhs)
 {
     *this = rhs;
     return ;
@@ -41,17 +41,32 @@ AWeapon const & AWeapon::operator=(AWeapon const & rhs)
     return (*this);
 }
 
-int     AWeapon::getAPCost(void)
+int     AWeapon::getAPCost(void) const
 {
     return (this->_apcost);
 }
 
-int     AWeapon::getDamage(void)
+int     AWeapon::getDamage(void) const
 {
     return (this->_damage);
 }
 
-void    AWeapon::attack() const
+std::string		AWeapon::getName(void) const
 {
-    
+	return (this->_name);
+}
+
+void	AWeapon::setName(std::string name)
+{
+	this->_name = name;
+}
+
+void	AWeapon::setAPCost(int APcost)
+{
+	this->_apcost = APcost;
+}
+
+void	AWeapon::setDamage(int damage)
+{
+	this->_damage = damage;
 }

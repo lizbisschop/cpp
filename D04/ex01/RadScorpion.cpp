@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 18:10:26 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 18:11:34 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/15 10:36:01 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ RadScorpion::RadScorpion(void): Enemy(80, "RadScorpion")
     return ;
 }
 
-RadScorpion(RadScorpion const & rhs)
+RadScorpion::RadScorpion(RadScorpion const & rhs)
 {
     std::cout << "* click click click *" << std::endl;
     *this = rhs;
@@ -33,13 +33,8 @@ RadScorpion::~RadScorpion(void)
 
 RadScorpion const & RadScorpion::operator=(RadScorpion const & rhs)
 {
-    this->_name = rhs._name;
-    this->_apcost = rhs._apcost;
-    this->_damage = rhs._damage;
+	this->setType(rhs.getType());
+	this->setHP(rhs.getHP());
     return (*this);
 }
 
-void    RadScorpion::takeDamage(int damage)
-{
-    
-}

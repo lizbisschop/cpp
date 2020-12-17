@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 10:51:23 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/14 12:08:13 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/15 12:03:45 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Character::Character(void)
 	return ;
 }
 
-Character::Character(std::string const & name): _name(name), _AP(40)
+Character::Character(std::string const & name): _name(name), _AP(40), _weapon(NULL)
 {
 	return ;
 }
@@ -39,6 +39,15 @@ Character::~Character(void)
 	return ;
 }
 
+int				Character::getAP(void) const
+{
+	return (this->_AP);
+}
+
+AWeapon	*		Character::getWeapon(void) const
+{
+	return (this->_weapon);
+}
 
 std::string    Character::getName(void) const
 {
@@ -53,16 +62,28 @@ void    Character::recoverAP(void)
 		this->_AP += 10;
 }
 
-void    Character::equip(AWeapon *)
+void    Character::equip(AWeapon * weapon)
 {
+	this->_weapon = weapon;
 }
 
-void	Character::attack(Enemy*)
+void	Character::attack(Enemy* enemy)
 {
-	std::cout << this->_name << " attacks " << getType() << " with a " << this->_weapon._name << std::endl;
-	this->_AP -+ AWeapon::getAPCost();
+	if (this->_weapon == NULL)
+		return ;
+	std::cout << this->_name << " attacks " << enemy->getType() << " with a " << this->_weapon->getName() << std::endl;
 	this->_weapon->attack();
-	Enemy::setHitpoints(this->weapon->getDamage);
-	if (Enemy::getHP() <= 0)
-		delete Enemy;
+	this->_AP -= this->_weapon->getAPCost();
+	enemy->setHP(enemy->getHP() - this->_weapon->getDamage());
+	if (enemy->getHP() <= 0)
+		delete enemy;
+}
+
+std::ostream const & operator<<(std::ostream  &stream, Character const & rhs)
+{
+	if (rhs.getWeapon() != NULL)
+		stream << rhs.getName() << " has " << rhs.getAP() << " AP and wields a " << rhs.getWeapon()->getName() << std::endl;
+	else
+		stream << rhs.getName() << " has " << rhs.getAP() << " AP and is unarmed" << std::endl;
+	return (stream);
 }

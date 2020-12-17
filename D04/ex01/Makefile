@@ -6,19 +6,19 @@
 #    By: lbisscho <lbisscho@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/29 16:05:55 by lbisscho      #+#    #+#                  #
-#    Updated: 2020/12/14 12:10:14 by lbisscho      ########   odam.nl          #
+#    Updated: 2020/12/17 12:22:07 by liz           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Character
 
-SRCS = PlasmaRifle.cpp PowerFist.cpp RadScorpion.cpp SuperMutant.cpp main.cpp
+SRCS = AWeapon.cpp Character.cpp Enemy.cpp PlasmaRifle.cpp PowerFist.cpp RadScorpion.cpp main.cpp SuperMutant.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
 FLAGS = -Wall -Werror -Wextra
 
-HPP = PlasmaRifle.hpp PowerFist.hpp RadScorpion.hpp SuperMutant.hpp
+HPP = AWeapon.hpp Character.hpp Enemy.hpp PlasmaRifle.hpp PowerFist.hpp RadScorpion.hpp SuperMutant.hpp
 
 all: $(NAME)
 

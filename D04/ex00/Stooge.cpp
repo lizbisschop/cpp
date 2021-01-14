@@ -6,27 +6,19 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 16:33:32 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/14 10:44:37 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/04 18:28:59 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Stooge.hpp"
 
-Stooge::Stooge(std::string n)
+Stooge::Stooge(std::string n): Victim(n)
 {
-    setName(n);
     std::cout << "Hello there my friends I am " << this->getName() << std::endl;
 }
 
-Stooge::Stooge(void)
+Stooge::Stooge(Stooge const & rhs): Victim(rhs)
 {
-    this->Victim::setName("Stoogerius");
-    std::cout << "Hello there my friends I am " << this->getName() << std::endl;
-}
-
-Stooge::Stooge(Stooge const & rhs)
-{
-    *this = rhs;
     return ;
 }
 
@@ -39,6 +31,11 @@ Stooge const & Stooge::operator=(Stooge const & rhs)
 {
     this->Victim::setName(rhs.Victim::getName());
     return (*this);
+}
+
+void			Stooge::getPolymorphed(void) const
+{
+	std::cout << this->getName() << " has been turned into a duck! Quak Quak" << std::endl;
 }
 
 std::ostream & operator<<(std::ostream & stream, Stooge & rhs)

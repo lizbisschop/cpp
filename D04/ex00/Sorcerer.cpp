@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 16:25:24 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/13 16:59:25 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/04 18:04:25 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 Sorcerer::Sorcerer(std::string n, std::string t): _name(n), _title(t)
 {
     std::cout << this->_name << ", " << this->_title <<  " is born!" << std::endl;
-    return ;
-}
-
-Sorcerer::Sorcerer(void)
-{
-    this->_name = "Magino";
-    this->_title = "Novice";
-    std::cout << this->_name << ", " << this->_title <<  ", is born!" << std::endl;
     return ;
 }
 

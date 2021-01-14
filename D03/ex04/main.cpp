@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/29 15:34:03 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/12 15:36:54 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/04 17:41:23 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,51 @@
 
 int	main(void)
 {
+	//FragTrap testing
+	std::cout << "\033[1;31mTesting FragTrap\033[0m\n";
 	FragTrap trap("James");
 	FragTrap trap2;
 
-	trap.vaulthunter_dot_exe("Cyberman");
-	trap.rangedAttack("Ginger bread man");
+	trap.vaulthunter_dot_exe("Crushjaw");
+	trap.rangedAttack("Handsome Jackie");
 	trap.takeDamage(20);
+	trap2.takeDamage(30);
 	trap.takeDamage(60);
 	trap.takeDamage(50);
 	trap.beRepaired(40);
 	
 	FragTrap trapCopy = trap;
-	trapCopy.vaulthunter_dot_exe("Steamer");
+	trapCopy.vaulthunter_dot_exe("Sky bullies");
+	trapCopy.vaulthunter_dot_exe("Heckle and Hyde");
+	trapCopy.vaulthunter_dot_exe("Baron Noggin");
+	trapCopy.vaulthunter_dot_exe("Sky bullies");
+	
+	//ScavTrap testing
+	std::cout << "\033[1;31mTesting ScavTrap\033[0m\n";
+	ScavTrap scav("James");
+	ScavTrap copy;
 
-	ScavTrap scav("Diego");
-	scav.takeDamage(50);
-	scav.challengeNewcomer("Mr poptart");
+	scav.meleeAttack("Sylestro and Atomic");
+	
+	copy = scav;
+	copy.rangedAttack("Handsome Jackie");
+	copy.beRepaired(20);
+	copy.takeDamage(50);
+	copy.challengeNewcomer("PsychoBillies");
+	scav.challengeNewcomer("Handsome Jackie");
 
+	//NinjaTrap testing
+	std::cout << "\033[1;31mTesting NinjaTrao\033[0m\n";
 	NinjaTrap ninja("Nini");
 	ninja.NinjaShoebox(trap);
 	ninja.NinjaShoebox(scav);
 
-	SuperTrap super("Super Trapper");
-	super.meleeAttack("Kangaroo");
+
+	//SuperTrap testing
+	std::cout << "\033[1;31mTesting SuperTrap\033[0m\n";
+	SuperTrap super("Superior");
+	super.vaulthunter_dot_exe("killer");
+	super.NinjaShoebox(ninja);
+
+	return (0);
 }

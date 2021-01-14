@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/03 15:30:35 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/12 14:13:07 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/04 17:33:31 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(ClapTrap const & other)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "(Clap) Donn't cryo!" << std::endl;
+	std::cout << "(Clap) Don't cryo!" << std::endl;
 	return ;
 }
 
@@ -61,7 +61,7 @@ void    ClapTrap::takeDamage(unsigned int ammount)
 		this->_HitPoints = 0;
 	else
 		this->_HitPoints -= hit;
-	std::cout << this->_name << " has been attacked with " << ammount << " and stil has " << this->_HitPoints << " hitpoints" << std::endl;
+	std::cout << this->_name << " has been attacked with " << ammount << " and still has " << this->_HitPoints << " hitpoints" << std::endl;
 }
 
 void    ClapTrap::beRepaired(unsigned int ammount)

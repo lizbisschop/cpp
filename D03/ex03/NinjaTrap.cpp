@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/04 11:42:36 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/12 15:44:05 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/04 17:25:33 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ NinjaTrap::NinjaTrap(NinjaTrap const & other)
 
 NinjaTrap::~NinjaTrap(void)
 {
+	std::cout << "(Ninja) This is why I was build" << std::endl;
 	return ;
 }
 

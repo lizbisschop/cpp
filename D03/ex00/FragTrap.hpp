@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/29 15:16:36 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/11/30 14:49:20 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/04 15:45:49 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
     void    laserInferno(std::string const & target);
     void    meatUnicycle(std::string const & target);
     void    ruberDucky(std::string const & target);
+	
 private:
     std::string _name;
     int _HitPoints;

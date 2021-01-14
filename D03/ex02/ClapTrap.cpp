@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/03 15:30:35 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/04 11:38:29 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/04 16:01:27 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(ClapTrap const & other)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "(Clap) Donn't cryo!" << std::endl;
+	std::cout << "(Clap) Don't cryo!" << std::endl;
 	return ;
 }
 
@@ -51,7 +51,7 @@ void    ClapTrap::rangedAttack(std::string const & target)
 
 void    ClapTrap::meleeAttack(std::string const & target)
 {
-	std::cout << this->_name << " attacks " << target << " at range, causing " << this->_MeleeAttackDamage << " points of damage!" << std::endl;	
+	std::cout << this->_name << " attacks " << target << " at melee, causing " << this->_MeleeAttackDamage << " points of damage!" << std::endl;	
 }
 
 void    ClapTrap::takeDamage(unsigned int ammount)
@@ -61,7 +61,7 @@ void    ClapTrap::takeDamage(unsigned int ammount)
 		this->_HitPoints = 0;
 	else
 		this->_HitPoints -= hit;
-	std::cout << this->_name << " has been attacked with " << ammount << " and stil has " << this->_HitPoints << " hitpoints" << std::endl;
+	std::cout << this->_name << " has been attacked with " << ammount << " and still has " << this->_HitPoints << " hitpoints" << std::endl;
 }
 
 void    ClapTrap::beRepaired(unsigned int ammount)

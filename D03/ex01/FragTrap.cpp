@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/29 15:27:33 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/11/30 15:05:49 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/04 13:22:16 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void    FragTrap::takeDamage(unsigned int ammount)
 		this->_HitPoints = 0;
 	else
 		this->_HitPoints -= hit;
-	std::cout << this->_name << " has been attacked with " << ammount << " and stil has " << this->_HitPoints << " hitpoints" << std::endl;
+	std::cout << this->_name << " has been attacked with " << ammount << " and still has " << this->_HitPoints << " hitpoints" << std::endl;
 }
 
 void    FragTrap::beRepaired(unsigned int ammount)

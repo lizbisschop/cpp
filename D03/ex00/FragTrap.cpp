@@ -6,11 +6,13 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/29 15:27:33 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/11/30 15:05:49 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/04 15:30:50 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+int rndm = 0;
 
 FragTrap::FragTrap(void): _name("no name"),
 	_HitPoints(100),
@@ -71,9 +73,10 @@ void    FragTrap::rangedAttack(std::string const & target)
 {
 	std::cout << this->_name << " attacks " << target << " at range, causing " << this->_RangedAttackDamage << " points of damage!" << std::endl;
 }
+
 void    FragTrap::meleeAttack(std::string const & target)
 {
-	std::cout << this->_name << " attacks " << target << " at range, causing " << this->_MeleeAttackDamage << " points of damage!" << std::endl;	
+	std::cout << this->_name << " attacks " << target << " at melee, causing " << this->_MeleeAttackDamage << " points of damage!" << std::endl;	
 }
 
 void    FragTrap::takeDamage(unsigned int ammount)
@@ -83,7 +86,7 @@ void    FragTrap::takeDamage(unsigned int ammount)
 		this->_HitPoints = 0;
 	else
 		this->_HitPoints -= hit;
-	std::cout << this->_name << " has been attacked with " << ammount << " and stil has " << this->_HitPoints << " hitpoints" << std::endl;
+	std::cout << this->_name << " has been attacked with " << ammount << " and still has " << this->_HitPoints << " hitpoints" << std::endl;
 }
 
 void    FragTrap::beRepaired(unsigned int ammount)
@@ -105,7 +108,11 @@ void    FragTrap::vaulthunter_dot_exe(std::string const & target)
 	}
 	else
 	{
-		srand(time(NULL));
+		if (rndm == 0)
+		{
+			srand(time(NULL));
+			rndm = 1;
+		}
 		std::cout << this->_name << " attacks " << target << " with "  << attacks[rand() % 5] << " causing 30 points of damage!" << std::endl;		
 		this->_EnergPoints -= 25;
 	}

@@ -6,7 +6,7 @@
 #    By: lbisscho <lbisscho@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/29 16:05:55 by lbisscho      #+#    #+#                  #
-#    Updated: 2020/12/19 15:10:14 by liz           ########   odam.nl          #
+#    Updated: 2021/01/06 12:20:23 by liz           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = AMateria.cpp Character.cpp Cure.cpp Ice.cpp main.cpp MateriaSource.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 HPP = AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
 

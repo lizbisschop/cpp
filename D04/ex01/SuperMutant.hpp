@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 18:03:09 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/14 11:34:28 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/06 11:23:04 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ public:
     SuperMutant(SuperMutant const & rhs);
     SuperMutant const & operator=(SuperMutant const & rhs);
     virtual ~SuperMutant(void);
+
+	void takeDamage(int);
 };
 
 #endif

@@ -6,12 +6,14 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/29 15:27:33 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/04 11:33:58 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/05 13:38:31 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
+
+int rndm = 0;
 
 FragTrap::FragTrap(void)
 {
@@ -74,7 +76,11 @@ void    FragTrap::vaulthunter_dot_exe(std::string const & target)
 	}
 	else
 	{
-		srand(time(NULL));
+		if (rndm == 0)
+		{
+			srand(time(NULL));
+			rndm = 1;
+		}
 		std::cout << getName() << " attacks " << target << " with "  << attacks[rand() % 5] << " causing 30 points of damage!" << std::endl;		
 		setEnergyPoints(getEnergyPoints() - 25);
 	}

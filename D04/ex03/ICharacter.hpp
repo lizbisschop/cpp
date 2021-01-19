@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 14:21:56 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/21 14:49:17 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/06 17:23:20 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define ICHARACTER_HPP
 
 #include <iostream>
-// #include "AMateria.hpp"
 
 class AMateria;
 

@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:57:20 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/15 10:36:10 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/06 11:24:58 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <iostream>
 
 class Enemy {
+private:
+	int     _hp;
+	std::string _type;
 public:
 	Enemy(int hp, std::string const & type);
 	Enemy(void);
@@ -24,13 +27,10 @@ public:
 	virtual ~Enemy(void);
 
 	std::string getType(void) const;
-	int     getHP(void) const;
-	void	setHP(int damage);
 	void	setType(std::string type);
+	int     getHP(void) const;
+	void	setHP(int);
 	virtual void    takeDamage(int);
-private:
-	int     _hp;
-	std::string _type;
 };
 
 #endif

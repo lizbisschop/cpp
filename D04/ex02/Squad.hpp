@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 12:08:33 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/19 12:43:33 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/06 15:01:37 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ class Squad : public ISquad {
 		ISpaceMarine *current;
 		s_list 	*next;
 	}	t_list;
+private:
+	int _NUnits;
+	t_list	*_unit;
 public:
 	Squad(void);
 	Squad(Squad const & rhs);
@@ -32,9 +35,6 @@ public:
 	int		getCount(void) const;
 	ISpaceMarine* getUnit(int) const;
 	int		push(ISpaceMarine*);
-private:
-	int _NUnits;
-	t_list	*_unit;
 };
 
 #endif

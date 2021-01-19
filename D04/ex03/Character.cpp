@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 14:26:32 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/20 13:27:01 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/07 14:46:24 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,24 @@ Character::Character(Character const & rhs)
 
 Character const & Character::operator=(Character const & rhs)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
+		this->_inventory[i] = NULL;
+	}
 	this->_name = rhs._name;
-	this->_inventory[0] = rhs._inventory[0];
-	this->_inventory[1] = rhs._inventory[1];
-	this->_inventory[2] = rhs._inventory[2];
-	this->_inventory[3] = rhs._inventory[3];
 	return (*this);
 }
 
 Character::~Character(void)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
+		this->_inventory[i] = NULL;
+	}
 	return ;
 }
 

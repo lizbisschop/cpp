@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/03 15:30:35 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/04 17:33:35 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/05 13:35:08 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void    ClapTrap::rangedAttack(std::string const & target)
 
 void    ClapTrap::meleeAttack(std::string const & target)
 {
-	std::cout << this->_name << " attacks " << target << " at range, causing " << this->_MeleeAttackDamage << " points of damage!" << std::endl;	
+	std::cout << this->_name << " attacks " << target << " at melee, causing " << this->_MeleeAttackDamage << " points of damage!" << std::endl;	
 }
 
 void    ClapTrap::takeDamage(unsigned int ammount)

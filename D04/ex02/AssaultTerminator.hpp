@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 12:02:34 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/19 13:14:25 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/06 15:01:21 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ public:
 	void	battleCry(void) const;
 	void	rangedAttack(void) const;
 	void	meleeAttack(void) const;
-private:
 };
 
 #endif

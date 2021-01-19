@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 14:21:56 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/12 15:42:28 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/05 14:16:24 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,13 @@ SuperTrap::SuperTrap(std::string n): FragTrap(), NinjaTrap()
 	return ;
 }
 
+SuperTrap::SuperTrap(SuperTrap const & other)
+{
+	std::cout << "(SuperTrap) Sweet life juice!" << std::endl;
+	*this = other;
+	return ;
+}
+
 SuperTrap::~SuperTrap(void)
 {
 	std::cout << "(SuperTrap) I'll die the way I lived: annoying!" << std::endl;
@@ -56,10 +63,10 @@ SuperTrap const & SuperTrap::operator=(SuperTrap const &  rhs)
 
 void	SuperTrap::meleeAttack(std::string target)
 {
-	return (NinjaTrap::meleeAttack(target));
+	NinjaTrap::meleeAttack(target);
 }
 
 void	SuperTrap::rangedAttack(std::string target)
 {
-	return (FragTrap::rangedAttack(target));
+	FragTrap::rangedAttack(target);
 }

@@ -6,7 +6,7 @@
 #    By: lbisscho <lbisscho@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/29 16:05:55 by lbisscho      #+#    #+#                  #
-#    Updated: 2020/12/12 14:09:17 by lbisscho      ########   odam.nl          #
+#    Updated: 2021/01/05 15:40:47 by liz           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = FragTrap.cpp ScavTrap.cpp ClapTrap.cpp NinjaTrap.cpp main.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 HPP = FragTrap.hpp ScavTrap.hpp ClapTrap.hpp NinjaTrap.hpp
 

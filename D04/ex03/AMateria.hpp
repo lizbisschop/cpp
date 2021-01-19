@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 13:29:45 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/21 14:48:34 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/06 17:16:27 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define AMATERIA_HPP
 
 #include <iostream>
-// #include "ICharacter.hpp"
 
 class ICharacter;
 

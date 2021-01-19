@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 12:58:29 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/14 14:51:53 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/17 16:09:00 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ Form*		Intern::makeForm(std::string name, std::string target)
 {
 	std::string Names[3] = {"robotomy request", "shrubbery creation", "presidential pardon"};
 	Form* (Intern:: *function_array[3])(std::string target) = {
-		&Intern::makeRobotomy, &Intern::makeShrubbery, &Intern::makePresidential
+		&Intern::makeRobotomy,
+		&Intern::makeShrubbery,
+		&Intern::makePresidential
 	};
 	for (int i = 0; i < 3; i++)
 	{

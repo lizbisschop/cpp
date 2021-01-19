@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 10:47:10 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/15 11:26:23 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/06 11:13:42 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 #include "AWeapon.hpp"
 
 class Character {
+private:
+    std::string _name;
+    int         _AP;
+    AWeapon     *_weapon;
 public:
     Character(void);
     Character(std::string const & name);
@@ -32,10 +36,6 @@ public:
     void    recoverAP();
     void    equip(AWeapon*);
     void    attack(Enemy*);
-private:
-    std::string _name;
-    int         _AP;
-    AWeapon     *_weapon;
 };
 
 std::ostream const & operator<<(std::ostream & stream, Character const & rhs);

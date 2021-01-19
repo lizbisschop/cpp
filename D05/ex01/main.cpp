@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/08 17:18:56 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/13 10:50:30 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/17 15:27:56 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,51 @@
 
 int main(void)
 {
-	Bureaucrat	b1("B1", 30);
-	Bureaucrat	b2("B2", 1);
-	Form		f1("F1", 3, 50);
+	Bureaucrat high("high", 1);
+	Bureaucrat low("low", 150);
+	
+	std::cout << "\033[1;31mTesting Bureaucrat \033[0m\n";
+	try {
+		Bureaucrat	tooHigh("TooHigh", 0);
+	}
+	catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		std::cout << high;
+		high.incrementGrade();
+	}
+	catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		std::cout << low;
+		low.decrementGrade();
+	}
+	catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << high << low;
 
+	std::cout << "\033[1;31mTesting Form \033[0m\n";
+
+	Form		f1("F1", 3, 50);
 	
 	std::cout << f1;
-	std::cout << b1;
-	std::cout << b2;
+	std::cout << high;
+	std::cout << low;
 	try
 	{
-		f1.beSigned(b1);
+		f1.beSigned(high);
 	}
 	catch (std::exception & e)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << f1;
 	try 
 	{
-		b1.incrementGrade();
+		high.incrementGrade();
 	}
 	catch (std::exception & e)
 	{
@@ -42,27 +68,20 @@ int main(void)
 	//trying to get it signed twice
 	try 
 	{
-		f1.beSigned(b2);
+		f1.beSigned(high);
 	}
 	catch (std::exception & e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	try 
-	{
-		f1.beSigned(b2);
-	}
-	catch(std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	
 	try
 	{
-		b2.signForm(f1);
+		Form 		f2("F2", 50, 50);
+		low.signForm(f2);
 	}
 	catch(std::exception & e)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	return (0);
 }

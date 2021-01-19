@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/29 15:34:03 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/04 15:58:11 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/05 13:45:23 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(void)
 
 	trap.vaulthunter_dot_exe("Crushjaw");
 	trap.rangedAttack("Handsome Jackie");
+	trap.meleeAttack("Baron Noggin");
 	trap.takeDamage(20);
 	trap2.takeDamage(30);
 	trap.takeDamage(60);
@@ -36,13 +37,14 @@ int	main(void)
 	
 	//ScavTrap testing
 	std::cout << "\033[1;31mTesting ScavTrap\033[0m\n";
-	ScavTrap scav("James");
+	ScavTrap scav("Dorathy");
 	ScavTrap copy;
 
 	scav.meleeAttack("Sylestro and Atomic");
 	
 	copy = scav;
 	copy.rangedAttack("Handsome Jackie");
+	scav.meleeAttack("Baron Noggin");
 	copy.beRepaired(20);
 	copy.takeDamage(50);
 	copy.challengeNewcomer("PsychoBillies");

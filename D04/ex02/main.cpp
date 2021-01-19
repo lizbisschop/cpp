@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/17 13:17:29 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/19 13:26:58 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/06 16:54:03 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int 	main(void)
 		cur->battleCry();
 		cur->rangedAttack();
 		cur->meleeAttack();
+		delete cur;
 	}
 	delete vlc;
 	delete bob;

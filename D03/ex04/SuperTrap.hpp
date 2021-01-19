@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 14:22:08 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/12 15:39:04 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/05 14:15:24 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class SuperTrap : public FragTrap, public NinjaTrap {
 public:
     SuperTrap(void);
     SuperTrap(std::string n);
+	SuperTrap(SuperTrap const & other);
     SuperTrap const & operator=(SuperTrap const & rhs);
     ~SuperTrap(void);
 

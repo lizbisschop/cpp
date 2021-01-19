@@ -6,7 +6,7 @@
 #    By: lbisscho <lbisscho@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/29 16:05:55 by lbisscho      #+#    #+#                  #
-#    Updated: 2020/12/19 13:18:39 by liz           ########   odam.nl          #
+#    Updated: 2021/01/06 12:20:11 by liz           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = AssaultTerminator.cpp Squad.cpp TacticalMarine.cpp main.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 HPP = AssaultTerminator.hpp ISpaceMarine.hpp ISquad.hpp Squad.hpp TacticalMarine.hpp 
 

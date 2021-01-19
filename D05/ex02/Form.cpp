@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/08 15:17:35 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/14 12:34:10 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/19 12:54:08 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Form const & Form::operator=(Form const & rhs)
 {
 	if (&rhs != this)
 	{
-		*this = rhs;
+		this->_signed = rhs._signed;
 	}
 	return (*this);
 }
@@ -90,8 +90,8 @@ void		Form::beSigned(Bureaucrat const & rhs)
 std::ostream & operator<<(std::ostream & stream, Form const & form)
 {
 	if (form.getSigned() == 1)
-		stream << "Form " << form.getName() << " Grade to sign = " << form.getGradeSign() << " Grade to execute is " << form.getGradeExecute() << " is signed" << std::endl; 
+		stream << "Form " << form.getName() << " Grade to sign = " << form.getGradeSign() << " grade to execute = " << form.getGradeExecute() << " is signed" << std::endl; 
 	else
-		stream << "Form " << form.getName() << " Grade to sign is " << form.getGradeSign() << " Grade to execute is " << form.getGradeExecute() << " is not signed" << std::endl; 
+		stream << "Form " << form.getName() << " grade to sign = " << form.getGradeSign() << " grade to execute = " << form.getGradeExecute() << " is not signed" << std::endl; 
 	return (stream);
 }

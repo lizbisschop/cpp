@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 11:21:28 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/14 12:21:32 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/18 13:24:41 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,15 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	if (this->getSigned() != 1)
 		throw Form::GradeNotSigned();
 	else if (executor.getGrade() >= this->getGradeExecute())
+	{
+		std::cout << "Can't be executed because: ";
 		throw Form::GradeTooLowException();
+	}
 	else
 	{
 		std::ofstream output;
-		std::string str = executor.getName();
-		str += "_Shrubbery";
+		std::string str = this->getTarget();
+		str += "_shrubbery";
 		output.open(str.c_str());
 		output << "		   ###\n";
 		output << "		  #o###\n";

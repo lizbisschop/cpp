@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/03 11:58:34 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/04 15:42:57 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/05 13:32:31 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void    ScavTrap::rangedAttack(std::string const & target)
 
 void    ScavTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "(ScavTrap)" << this->_name << " attacks " << target << " at melee, causing " << this->_MeleeAttackDamage << " points of damage!" << std::endl;	
+	std::cout << "(ScavTrap) " << this->_name << " attacks " << target << " at melee, causing " << this->_MeleeAttackDamage << " points of damage!" << std::endl;	
 }
 
 void    ScavTrap::takeDamage(unsigned int ammount)
@@ -83,7 +83,7 @@ void    ScavTrap::takeDamage(unsigned int ammount)
 		this->_HitPoints = 0;
 	else
 		this->_HitPoints -= hit;
-	std::cout <<  "(ScavTrap)" << this->_name << " has been attacked with " << ammount << " and still has " << this->_HitPoints << " hitpoints" << std::endl;
+	std::cout <<  "(ScavTrap) " << this->_name << " has been attacked with " << ammount << " and still has " << this->_HitPoints << " hitpoints" << std::endl;
 }
 
 void    ScavTrap::beRepaired(unsigned int ammount)

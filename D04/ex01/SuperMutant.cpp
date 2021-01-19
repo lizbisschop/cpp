@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 18:03:05 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/15 10:40:51 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/06 11:25:28 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,10 @@ SuperMutant const & SuperMutant::operator=(SuperMutant const & rhs)
    	this->setType(rhs.getType());
 	this->setHP(rhs.getHP());
     return (*this);
+}
+
+void				SuperMutant::takeDamage(int damage)
+{
+	damage -= 3;
+	setHP(damage);
 }

@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 17:05:09 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/04 18:28:11 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/05 17:58:04 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ Peon::Peon(std::string n): Victim(n)
 
 Peon::Peon(Peon const & rhs): Victim(rhs)
 {
+    std::cout << "Zog zog." << std::endl;
     return ;
 }
 
 Peon::~Peon(void)
 {
-    std::cout << "Blueark" << std::endl;
+    std::cout << "Blueark..." << std::endl;
 }
 
 Peon const & Peon::operator=(Peon const & rhs)

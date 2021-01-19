@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/07 15:10:08 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/13 10:22:13 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/17 15:17:39 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ public:
 
 	std::string getName(void) const;
 	int			getGrade(void) const;
+	void		setGrade(int grade);
 	void		incrementGrade(void);
 	void		decrementGrade(void);
-	void		signForm(Form form);
+	void		signForm(Form & form);
 
 	class GradeTooHighException : public std::exception {
 	public:

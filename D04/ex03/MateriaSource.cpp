@@ -6,13 +6,13 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 14:47:30 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/21 14:55:08 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/07 14:57:30 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource(void)
+MateriaSource::MateriaSource(void): _learnedMateria(0)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -29,11 +29,12 @@ MateriaSource::MateriaSource(MateriaSource const & rhs)
 
 MateriaSource const & MateriaSource::operator=(MateriaSource const & rhs)
 {
-	this->_inventory[0] = rhs._inventory[0];
-	this->_inventory[1] = rhs._inventory[1];
-	this->_inventory[2] = rhs._inventory[2];
-	this->_inventory[3] = rhs._inventory[3];
-
+	for (int i = 0; i < this->_learnedMateria; i++)
+	{
+		if (this->_inventory[i] != NULL)
+			delete	this->_inventory[i];
+		_inventory[i] = rhs._inventory[i];
+	}
 	return (*this);
 }
 

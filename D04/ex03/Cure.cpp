@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 14:16:36 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/20 13:19:35 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/07 13:24:31 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ void		Cure::use(ICharacter& target)
 
 Cure * Cure::clone(void) const
 {
-	return (new Cure("cure"));
+	return (new Cure(*this));
 }

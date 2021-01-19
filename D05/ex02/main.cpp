@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/08 17:18:56 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/14 14:50:35 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/17 15:57:37 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,16 @@
 
 int main(void)
 {
-	Bureaucrat	High("High", 149);
-	Bureaucrat	Low("Low", 1);
+	Bureaucrat	High("High", 1);
+	Bureaucrat	Low("Low", 150);
 	RobotomyRequestForm r1("Garden");
 	ShrubberyCreationForm		s1("Home");
 	PresidentialPardonForm		p1("Pallace");
 
 	
-	std::cout << s1;
+	std::cout << s1 << r1 << p1;
 	std::cout << High;
 	std::cout << Low;
-	try
-	{
-		s1.beSigned(High);
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
 	try 
 	{
 		High.incrementGrade();
@@ -61,7 +53,6 @@ int main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	
 	try
 	{
 		High.signForm(s1);
@@ -116,7 +107,7 @@ int main(void)
 		std::cout << e.what() << std::endl;
 	}
 	try {
-		Low.signForm(p1);
+		High.signForm(p1);
 	}
 	catch (std::exception & e)
 	{

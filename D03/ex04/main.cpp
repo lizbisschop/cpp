@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/29 15:34:03 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/04 17:41:23 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/05 14:25:48 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,26 @@ int	main(void)
 	//NinjaTrap testing
 	std::cout << "\033[1;31mTesting NinjaTrao\033[0m\n";
 	NinjaTrap ninja("Nini");
+	NinjaTrap ninja2("Nina");
+	
+	NinjaTrap copyNinja = ninja2;
+
 	ninja.NinjaShoebox(trap);
 	ninja.NinjaShoebox(scav);
+	ninja2.NinjaShoebox(ninja);
+	copyNinja.meleeAttack("PsychoBillies");
+	copyNinja.takeDamage(30);
 
 
 	//SuperTrap testing
 	std::cout << "\033[1;31mTesting SuperTrap\033[0m\n";
 	SuperTrap super("Superior");
-	super.vaulthunter_dot_exe("killer");
+	SuperTrap copySuper(super);
+	
+	copySuper.vaulthunter_dot_exe("Sylestro and Atomic");
+	super.vaulthunter_dot_exe("Handsome Jackie");
 	super.NinjaShoebox(ninja);
+	copySuper.meleeAttack("PsychoBillies");
 
 	return (0);
 }

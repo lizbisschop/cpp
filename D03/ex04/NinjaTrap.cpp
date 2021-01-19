@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/04 11:42:36 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/12 15:44:44 by lbisscho      ########   odam.nl         */
+/*   Updated: 2021/01/05 14:24:54 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,14 @@ NinjaTrap::NinjaTrap(std::string n)
 
 NinjaTrap::NinjaTrap(NinjaTrap const & other)
 {
-	std::cout << "(Ninja) I'm too pretty to die!" << std::endl;
+	std::cout << "(Ninja) Can I just say... yeehaw" << std::endl;
 	*this = other;
 	return ;
 }
 
 NinjaTrap::~NinjaTrap(void)
 {
+	std::cout << "(Ninja) This is why I was build" << std::endl;
 	return ;
 }
 

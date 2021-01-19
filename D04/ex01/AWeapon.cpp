@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:31:05 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/15 11:27:54 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/06 11:42:06 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int     AWeapon::getDamage(void) const
     return (this->_damage);
 }
 
-std::string		AWeapon::getName(void) const
+std::string	const	AWeapon::getName(void) const
 {
 	return (this->_name);
 }

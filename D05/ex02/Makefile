@@ -6,7 +6,7 @@
 #    By: liz <liz@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/07 15:04:44 by liz           #+#    #+#                  #
-#    Updated: 2021/01/14 11:46:32 by liz           ########   odam.nl          #
+#    Updated: 2021/01/18 13:23:33 by liz           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.cpp Form.cpp  Bureaucrat.cpp ShrubberyCreationForm.cpp PresidentialP
 
 OBJ = $(SRCS:.cpp=.o)
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 HPP = Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp
 

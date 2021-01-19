@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/07 15:12:27 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/12 13:13:16 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/19 12:51:55 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,8 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 	return ;
 }
 
-Bureaucrat::Bureaucrat(void)
+Bureaucrat::Bureaucrat(Bureaucrat const & copy): _name(copy._name), _grade(copy._grade)
 {
-	return ;
-}
-
-Bureaucrat::Bureaucrat(Bureaucrat const & copy)
-{
-	*this = copy;
 	return ;
 }
 
@@ -44,7 +38,7 @@ Bureaucrat const & Bureaucrat::operator=(Bureaucrat const & rhs)
 {
 	if (&rhs != this)
 	{
-		*this = rhs;
+		this->_grade = rhs._grade;
 	}
     return (*this);
 }
@@ -64,27 +58,27 @@ int			Bureaucrat::getGrade(void) const
 	return (this->_grade);
 }
 
+void		Bureaucrat::setGrade(int grade)
+{
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
+	else
+		_grade = grade;
+}
+
 void		Bureaucrat::incrementGrade(void)
 {
-	if ((this->_grade -= 1) < 1)
-	{
-		throw GradeTooHighException();
-	}
-	else
-		this->_grade--;
+	setGrade(this->_grade - 1);
 }
 
 void		Bureaucrat::decrementGrade(void)
 {
-	if ((this->_grade += 1) > 150)
-	{
-		throw GradeTooLowException();
-	}
-	else
-		this->_grade++;
+	setGrade(this->_grade + 1);
 }
 
-std::ostream const & operator<<(std::ostream & stream, Bureaucrat const & Bureaucrat)
+std::ostream & operator<<(std::ostream & stream, Bureaucrat const & Bureaucrat)
 {
 	stream << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade()<< "." << std::endl;
 	return (stream);

@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 12:12:02 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/19 13:22:30 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/06 16:58:08 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Squad::Squad(void)
 {
+	this->_unit = NULL;
 	return ;
 }
 
@@ -25,6 +26,18 @@ Squad::Squad(Squad const & rhs)
 
 Squad 	const & Squad::operator=(Squad const & rhs)
 {
+	if (this->_unit != NULL)
+	{
+		t_list *tmp;
+		
+		while (this->_unit)
+		{
+			tmp = this->_unit;
+			delete this->_unit->current;
+			this->_unit = tmp->next;
+			delete tmp;
+		}
+	}
 	this->_NUnits = rhs._NUnits;
 	this->_unit = rhs._unit;
 	return (*this);
@@ -32,6 +45,15 @@ Squad 	const & Squad::operator=(Squad const & rhs)
 
 Squad::~Squad(void)
 {
+	t_list *tmp;
+	
+	while (this->_unit)
+	{
+		tmp = this->_unit;
+		delete this->_unit->current;
+		this->_unit = tmp->next;
+		delete tmp;
+	}
 	return ;
 }
 
@@ -55,7 +77,7 @@ ISpaceMarine* Squad::getUnit(int N) const
 
 int		Squad::push(ISpaceMarine* newMarine)
 {
-	s_list *tmp;
+	t_list *tmp;
 
 	if (newMarine == NULL)
 		return (this->_NUnits);

@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 14:02:55 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/21 15:00:36 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/07 13:24:40 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ void		Ice::use(ICharacter& target)
 
 Ice	* Ice::clone(void) const
 {
-	return (new Ice("ice"));
+	return (new Ice(*this));
 }

@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 14:53:57 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/20 13:26:41 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/07 14:54:25 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 	virtual AMateria* createMateria(std::string const & type);
 private:
 	AMateria *_inventory[4];
+	int			_learnedMateria;
 };
 
 #endif

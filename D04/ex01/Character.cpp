@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 10:51:23 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/15 12:03:45 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/06 14:41:17 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Character::Character(Character const & rhs)
 
 Character const & Character::operator=(Character const & rhs)
 {
-	this->_name = rhs.getName();
+	this->_name = rhs._name;
 	return (*this); 
 }
 
@@ -71,10 +71,15 @@ void	Character::attack(Enemy* enemy)
 {
 	if (this->_weapon == NULL)
 		return ;
+	if (this->_AP < this->_weapon->getAPCost())
+	{
+		std::cout << "Not enough AP" << std::endl;
+		return ;
+	}
 	std::cout << this->_name << " attacks " << enemy->getType() << " with a " << this->_weapon->getName() << std::endl;
 	this->_weapon->attack();
 	this->_AP -= this->_weapon->getAPCost();
-	enemy->setHP(enemy->getHP() - this->_weapon->getDamage());
+	enemy->takeDamage(this->_weapon->getDamage());
 	if (enemy->getHP() <= 0)
 		delete enemy;
 }

@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/18 11:39:57 by liz           #+#    #+#                 */
-/*   Updated: 2020/11/28 15:19:51 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/06 11:36:16 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 
 class Weapon {
 public:
-	Weapon(std::string);
+	Weapon(std::string t);
+	Weapon(void);
 	~Weapon(void);
-	std::string const& getType(void);
-	void setType(std::string);
+	std::string const & getType(void);
+	void	setType(std::string);
 private:
 	std::string _type;
 };

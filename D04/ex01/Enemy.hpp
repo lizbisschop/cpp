@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:57:20 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/06 11:24:58 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:08:36 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Enemy(int hp, std::string const & type);
 	Enemy(void);
 	Enemy(Enemy const & rhs);
-	Enemy const & operator=(Enemy const & rhs);
+	Enemy & operator=(Enemy const & rhs);
 	virtual ~Enemy(void);
 
 	std::string getType(void) const;

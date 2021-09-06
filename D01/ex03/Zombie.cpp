@@ -6,26 +6,21 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 15:54:05 by liz           #+#    #+#                 */
-/*   Updated: 2020/11/28 14:45:08 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/08 12:01:55 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string t, std::string n)
-{
-	this->_type = t;
-	this->_name = n;
-	return;
-}
-
 Zombie::Zombie(void)
 {
+	std::cout << " Zombie constructor" << std::endl; 
 	return ;
 }
 
 Zombie::~Zombie(void)
 {
+	std::cout << " Zombie destructor" << std::endl; 
 	return ;
 }
 

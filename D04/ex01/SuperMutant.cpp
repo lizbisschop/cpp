@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 18:03:05 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/06 11:25:28 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/18 18:18:23 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ SuperMutant::~SuperMutant(void)
     return ;
 }
 
-SuperMutant const & SuperMutant::operator=(SuperMutant const & rhs)
+SuperMutant & SuperMutant::operator=(SuperMutant const & rhs)
 {
    	this->setType(rhs.getType());
 	this->setHP(rhs.getHP());
@@ -41,5 +41,8 @@ SuperMutant const & SuperMutant::operator=(SuperMutant const & rhs)
 void				SuperMutant::takeDamage(int damage)
 {
 	damage -= 3;
-	setHP(damage);
+	if (getHP() - damage < 0)
+		setHP(0);
+	else
+		setHP(damage);
 }

@@ -6,14 +6,14 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/18 11:46:28 by liz           #+#    #+#                 */
-/*   Updated: 2020/10/18 15:19:48 by liz           ########   odam.nl         */
+/*   Updated: 2020/12/06 11:53:34 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &w): _name(name), _weapon(w)
+HumanA::HumanA(std::string n, Weapon &weapon): _name(n), _weapon(weapon)
 {
 	return ;
 }

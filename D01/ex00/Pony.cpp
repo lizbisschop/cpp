@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 15:06:21 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/07/31 13:02:26 by liz           ########   odam.nl         */
+/*   Updated: 2020/12/05 14:09:40 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ pony::pony(void)
 
 pony::~pony(void)
 {
-	std::cout << "Deconstructor was called.\n";
+	std::cout << "Destructor was called.\n";
 	return ;
 }
 

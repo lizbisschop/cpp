@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 12:52:53 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/06 15:01:50 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:08:36 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class TacticalMarine : public ISpaceMarine {
 public:
 	TacticalMarine(void);
 	TacticalMarine(TacticalMarine const & rhs);
-	TacticalMarine const & operator=(TacticalMarine const & rhs);
+	TacticalMarine & operator=(TacticalMarine const & rhs);
 	virtual ~TacticalMarine(void);
 
 	ISpaceMarine* clone(void) const;

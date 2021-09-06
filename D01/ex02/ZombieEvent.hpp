@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 15:54:17 by liz           #+#    #+#                 */
-/*   Updated: 2020/11/28 13:33:02 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/08 11:35:01 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Zombie.hpp"
+#include <cstdlib>
 
 class ZombieEvent {
 public:

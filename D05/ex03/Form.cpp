@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/08 15:17:35 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/19 12:54:28 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/19 15:09:20 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void		Form::beSigned(Bureaucrat const & rhs)
 {
 	if (this->_signed == 1)
 	{
-		throw GradeAlreadySigned();
+		throw FormAlreadySigned();
 	}
 	else if (rhs.getGrade() <= this->_gradeSign)
 	{

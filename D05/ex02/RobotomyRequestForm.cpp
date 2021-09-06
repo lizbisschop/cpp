@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 11:37:18 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/17 15:56:06 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/19 15:09:56 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getSigned() != 1)
-		throw Form::GradeNotSigned();
+		throw Form::FormNotSigned();
 	else if (executor.getGrade() >= this->getGradeExecute())
 	{
 		std::cout << "can't be executed because: ";

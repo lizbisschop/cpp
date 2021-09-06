@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 18:01:05 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/15 11:21:32 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/20 14:33:10 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void            Enemy::setHP(int damage)
     this->_hp -= damage;
 }
 
-Enemy const & Enemy::operator=(Enemy const & rhs)
+Enemy & Enemy::operator=(Enemy const & rhs)
 {
 	this->_hp = rhs._hp;
 	this->_type = rhs._type;
@@ -62,7 +62,8 @@ Enemy const & Enemy::operator=(Enemy const & rhs)
 
 void	Enemy::takeDamage(int damage)
 {
-	this->_hp -= damage;
-	if (this->_hp < 0)
+	if (this->_hp - damage < 0)
 		this->_hp = 0;
+	else
+		this->_hp -= damage;
 }

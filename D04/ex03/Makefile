@@ -6,11 +6,11 @@
 #    By: lbisscho <lbisscho@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/29 16:05:55 by lbisscho      #+#    #+#                  #
-#    Updated: 2021/01/06 12:20:23 by liz           ########   odam.nl          #
+#    Updated: 2021/02/10 14:00:52 by liz           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Squad
+NAME = Materia
 
 SRCS = AMateria.cpp Character.cpp Cure.cpp Ice.cpp main.cpp MateriaSource.cpp
 

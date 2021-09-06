@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 10:47:10 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/06 11:13:42 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:08:36 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     Character(void);
     Character(std::string const & name);
     Character(Character const & rhs);
-    Character const & operator=(Character const & rhs);
+    Character & operator=(Character const & rhs);
     ~Character(void);
 
 	std::string 	getName(void) const;
@@ -38,6 +38,6 @@ public:
     void    attack(Enemy*);
 };
 
-std::ostream const & operator<<(std::ostream & stream, Character const & rhs);
+std::ostream & operator<<(std::ostream & stream, Character const & rhs);
 
 #endif

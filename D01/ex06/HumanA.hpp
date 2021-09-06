@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/18 11:59:52 by liz           #+#    #+#                 */
-/*   Updated: 2020/10/18 15:37:49 by liz           ########   odam.nl         */
+/*   Updated: 2020/12/06 11:53:21 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@
 
 class HumanA {
 public:
-	HumanA(std::string, Weapon &w);
+	HumanA(std::string n, Weapon &weapon);
 	~HumanA(void);
-	void attack(void);
-	
+	void	attack(void);
 private:
 	std::string _name;
 	Weapon &_weapon;

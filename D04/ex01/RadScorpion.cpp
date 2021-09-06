@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 18:10:26 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/15 10:36:01 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:10:21 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ RadScorpion::~RadScorpion(void)
     return ;
 }
 
-RadScorpion const & RadScorpion::operator=(RadScorpion const & rhs)
+RadScorpion & RadScorpion::operator=(RadScorpion const & rhs)
 {
 	this->setType(rhs.getType());
 	this->setHP(rhs.getHP());

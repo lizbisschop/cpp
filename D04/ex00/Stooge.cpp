@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 16:33:32 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/04 18:28:59 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:09:35 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Stooge::~Stooge(void)
     std::cout << "Its time for " << this->getName() << " to go." << std::endl;
 }
 
-Stooge const & Stooge::operator=(Stooge const & rhs)
+Stooge & Stooge::operator=(Stooge const & rhs)
 {
     this->Victim::setName(rhs.Victim::getName());
     return (*this);

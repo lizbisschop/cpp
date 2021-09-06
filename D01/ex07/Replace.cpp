@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/06 13:09:54 by liz           #+#    #+#                 */
-/*   Updated: 2020/11/12 11:36:05 by liz           ########   odam.nl         */
+/*   Updated: 2020/12/08 12:37:13 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,51 +15,50 @@
 #include <fstream>
 #include <cstring>
 
-int error(std::ifstream *input_file, std::ofstream *output_file, std::string error)
+int		error(std::ofstream *output, std::ifstream *input, std::string err)
 {
-	(*input_file).close();
-	(*output_file).close();
-	std::cout << error;
+	std::cout << err << std::endl;
+	(*output).close();
+	(*input).close();
 	return (-1);
 }
 
-int main(int argc, char **argv)
+int 	main(int argc, char **argv)
 {
 	std::string s1, s2;
 	std::string buffer;
+	std::ofstream output;
+	std::ifstream input;
 	size_t start, found;
-	std::ifstream input_file;
-	std::ofstream output_file;
 
 	if (argc != 4)
-		return(error(&input_file, &output_file, "Not the right amount of arguments\n"));
+		return (error(&output, &input, "Not the right amount of arguments"));
 	s1 = argv[2];
 	s2 = argv[3];
 	if (s1.length() == 0 || s2.length() == 0)
-		return (error(&input_file, &output_file, "String doesn't excist\n"));
-	input_file.open(argv[1]);
-	output_file.open(strcat(argv[1], ".replace"));
-	if (!(input_file.is_open()) || !(output_file.is_open()))
-		return (error(&input_file, &output_file, "Unable to open file\n"));
-	while (getline(input_file, buffer))
+		return (error(&output, &input, "please enter a existing string"));
+	input.open(argv[1]);
+	output.open(strcat(argv[1], ".replace"));
+	if (!(input.is_open()) || !(output.is_open()))
+		return (error(&output, &input, "files are not open"));		
+	while (getline(input, buffer))
 	{
-		found = 0;
 		start = 0;
+		found = 0;
 		while (found != std::string::npos)
 		{
 			found = buffer.find(s1, start);
 			if (found != std::string::npos)
 			{
-				output_file << buffer.substr(start, found - start) << std::endl;
-				output_file << s2;
+				output << buffer.substr(start, found - start);
+				output << s2;
 				start = found + s1.length();
 			}
 			else
-				output_file << buffer.substr(start, buffer.length() - start) << std::endl;
+				output << buffer.substr(start, buffer.length() - start) << std::endl;
 		}
 	}
-	output_file.close();
-	input_file.close();
+	output.close();
+	input.close();
 	return (0);
-		
 }

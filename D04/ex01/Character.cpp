@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 10:51:23 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/06 14:41:17 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/20 14:32:14 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ Character::Character(Character const & rhs)
 	return ;
 }
 
-Character const & Character::operator=(Character const & rhs)
+Character & Character::operator=(Character const & rhs)
 {
 	this->_name = rhs._name;
+	this->_AP = rhs._AP;
+	this->_weapon = rhs._weapon;
 	return (*this); 
 }
 
@@ -84,7 +86,7 @@ void	Character::attack(Enemy* enemy)
 		delete enemy;
 }
 
-std::ostream const & operator<<(std::ostream  &stream, Character const & rhs)
+std::ostream & operator<<(std::ostream  &stream, Character const & rhs)
 {
 	if (rhs.getWeapon() != NULL)
 		stream << rhs.getName() << " has " << rhs.getAP() << " AP and wields a " << rhs.getWeapon()->getName() << std::endl;

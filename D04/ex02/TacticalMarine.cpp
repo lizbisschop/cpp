@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 12:56:34 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/19 13:17:44 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:47:25 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ TacticalMarine::TacticalMarine(TacticalMarine const & rhs)
 	return ;
 }
 
-TacticalMarine const & TacticalMarine::operator=(TacticalMarine const & rhs)
+TacticalMarine & TacticalMarine::operator=(TacticalMarine const & rhs)
 {
 	(void)rhs;
 	return (*this);
@@ -43,14 +43,14 @@ ISpaceMarine* TacticalMarine::clone(void) const
 }
 
 void TacticalMarine::battleCry(void) const
-{
+{ 
 	std::cout << "For the holy PLOT" << std::endl;
 }
 
 void	TacticalMarine::rangedAttack(void) const
 {
 	std::cout << "* attacks with a bolter *" << std::endl;
-}
+} 
 
 void TacticalMarine::meleeAttack(void) const
 {

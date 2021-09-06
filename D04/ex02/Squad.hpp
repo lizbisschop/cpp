@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 12:08:33 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/06 15:01:37 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/18 16:37:09 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,17 @@
 #include <iostream>
 #include <vector>
 
-
 class Squad : public ISquad {
-	typedef struct s_list {
-		ISpaceMarine *current;
-		s_list 	*next;
-	}	t_list;
+
 private:
-	int _NUnits;
-	t_list	*_unit;
+	int 	_NUnits;
+	ISpaceMarine	**_unit;
+	int	_capacity;
 public:
 	Squad(void);
+	Squad(int capacity);
 	Squad(Squad const & rhs);
-	Squad const & operator=(Squad const & rhs);
+	Squad & operator=(Squad const & rhs);
 	virtual ~Squad(void);
 
 	int		getCount(void) const;

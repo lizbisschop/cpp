@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 15:54:09 by liz           #+#    #+#                 */
-/*   Updated: 2020/10/10 12:04:57 by liz           ########   odam.nl         */
+/*   Updated: 2020/12/08 11:28:55 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ public:
 	void setName(std::string);
 	std::string announce(void);
 private:
-	std::string _name;
 	std::string _type;	
+	std::string _name;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:46:05 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/15 10:23:24 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:10:03 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ PlasmaRifle::~PlasmaRifle(void)
     return ;
 }
 
-PlasmaRifle const & PlasmaRifle::operator=(PlasmaRifle const & rhs)
+PlasmaRifle & PlasmaRifle::operator=(PlasmaRifle const & rhs)
 {
     this->setName(rhs.getName());
     this->setAPCost(rhs.getAPCost());

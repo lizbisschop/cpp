@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 11:21:28 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/18 13:24:41 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/19 15:10:07 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getSigned() != 1)
-		throw Form::GradeNotSigned();
+		throw Form::FormNotSigned();
 	else if (executor.getGrade() >= this->getGradeExecute())
 	{
 		std::cout << "Can't be executed because: ";

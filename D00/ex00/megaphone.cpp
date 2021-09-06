@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/24 10:46:46 by liz           #+#    #+#                 */
-/*   Updated: 2020/07/28 13:21:44 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/07/30 11:05:13 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	megaphone(int argc, char **argv)
 		i++;
 		j = 0;
 	}
-	std::cout << '\n';
+	std::cout << std::endl;
 }
 
 int main(int argc, char **argv)

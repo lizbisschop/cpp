@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 13:29:45 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/06 17:16:27 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:08:36 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	AMateria(std::string const & type);
 	AMateria(void);
 	AMateria(AMateria const & rhs);
-	AMateria const & operator=(AMateria const & rhs);
+	AMateria & operator=(AMateria const & rhs);
 	virtual ~AMateria(void);
 
 	std::string const & getType(void) const;

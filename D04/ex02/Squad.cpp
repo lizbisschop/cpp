@@ -6,55 +6,59 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 12:12:02 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/06 16:58:08 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/18 18:19:56 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 
-Squad::Squad(void)
+Squad::Squad(void): _NUnits(0), _unit(NULL), _capacity(15)
 {
-	this->_unit = NULL;
+	this->_unit = new ISpaceMarine*[this->_capacity];
+	return ;
+}
+
+Squad::Squad(int capacity): _NUnits(0), _unit(NULL), _capacity(capacity)
+{
+	this->_unit = new ISpaceMarine*[this->_capacity];
 	return ;
 }
 
 Squad::Squad(Squad const & rhs)
 {
-	*this = rhs;
+	this->_capacity = rhs._capacity;
+	this->_unit = new ISpaceMarine*[this->_capacity];
+	this->_NUnits = rhs._NUnits;
+	for (int i = 0; i < this->_NUnits; i++)
+		this->_unit[i] = rhs._unit[i]->clone();
 	return ;
 }
 
-Squad 	const & Squad::operator=(Squad const & rhs)
+Squad 	& Squad::operator=(Squad const & rhs)
 {
 	if (this->_unit != NULL)
 	{
-		t_list *tmp;
-		
-		while (this->_unit)
+		for (int i = 0; i < this->_NUnits; i++)
 		{
-			tmp = this->_unit;
-			delete this->_unit->current;
-			this->_unit = tmp->next;
-			delete tmp;
+			delete this->_unit[i];
 		}
+		delete[] this->_unit;
 	}
+	this->_capacity = rhs._capacity;
+	this->_unit = new ISpaceMarine*[this->_capacity];
 	this->_NUnits = rhs._NUnits;
-	this->_unit = rhs._unit;
+	for (int i = 0; i < this->_NUnits; i++)
+		this->_unit[i] = rhs._unit[i]->clone();
 	return (*this);
 }
 
 Squad::~Squad(void)
 {
-	t_list *tmp;
-	
-	while (this->_unit)
+	for (int i = 0; i < this->_NUnits; i++)
 	{
-		tmp = this->_unit;
-		delete this->_unit->current;
-		this->_unit = tmp->next;
-		delete tmp;
+		delete this->_unit[i];
 	}
-	return ;
+	delete[] this->_unit;
 }
 
 int		Squad::getCount(void) const
@@ -64,44 +68,21 @@ int		Squad::getCount(void) const
 
 ISpaceMarine* Squad::getUnit(int N) const
 {
-	t_list *tmp;
-
-	tmp = this->_unit;
-	while(N != 0 && tmp)
-	{
-		tmp = tmp->next;
-		N--;
-	}
-	return (tmp->current);
+	if (N >= this ->_NUnits || N < 0)
+		return (NULL);
+	return (this->_unit[N]);
 }
 
 int		Squad::push(ISpaceMarine* newMarine)
 {
-	t_list *tmp;
-
-	if (newMarine == NULL)
+	if (newMarine == NULL || this->_NUnits >= this->_capacity)
 		return (this->_NUnits);
-	if (this->_unit == NULL)
+	for (int i = 0; i < this->_NUnits; i++)
 	{
-		this->_unit = new(t_list);
-		this->_unit->current = newMarine;
-		this->_unit->next = NULL;
+		if (newMarine == this->_unit[i])
+			return (this->_NUnits);
 	}
-	else
-	{
-		tmp = this->_unit;
-		while (tmp->next)
-		{
-			if (tmp->current == newMarine)
-			{
-				return (this->_NUnits);
-			}
-			tmp = tmp->next;
-		}
-		tmp->next = new(t_list);
-		tmp->next->current = newMarine;
-		tmp->next->next = NULL;
-	}
+	this->_unit[this->_NUnits] = newMarine;
 	this->_NUnits++;
 	return (this->_NUnits);
 }

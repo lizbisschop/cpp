@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:51:00 by lbisscho      #+#    #+#                 */
-/*   Updated: 2020/12/15 10:26:24 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:10:09 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ PowerFist::~PowerFist(void)
     return ;
 }
 
-PowerFist const & PowerFist::operator=(PowerFist const & rhs)
+PowerFist & PowerFist::operator=(PowerFist const & rhs)
 {
 	this->setName(rhs.getName());
     this->setAPCost(rhs.getAPCost());

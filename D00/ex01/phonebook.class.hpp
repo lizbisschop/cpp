@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 13:19:03 by liz           #+#    #+#                 */
-/*   Updated: 2020/07/29 11:53:56 by liz           ########   odam.nl         */
+/*   Updated: 2020/07/30 11:02:53 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define PHONEBOOK_CLASS_HPP
 
 #include <iostream>
-
 
 class phonebook {
 public:
@@ -56,5 +55,10 @@ private:
 	std::string _underwearColor;
 	std::string _darkestSecret;
 };
+
+void	search_user(int number_users, phonebook *phonebook);
+void	visit_contact(int index, phonebook *phonebook);
+phonebook	add(void);
+void 	menu(void);
 
 #endif

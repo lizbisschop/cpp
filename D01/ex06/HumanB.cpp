@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/18 15:38:17 by liz           #+#    #+#                 */
-/*   Updated: 2020/10/18 15:51:07 by liz           ########   odam.nl         */
+/*   Updated: 2020/12/06 11:43:59 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ HumanB::~HumanB(void)
 	return ;
 }
 
-void 	HumanB::setWeapon(Weapon &w)
+void	HumanB::setWeapon(Weapon & weapon)
 {
-	this->_weapon = &w;
+	this->_weapon = &weapon;
+	return ;
 }
 
 void	HumanB::attack(void)

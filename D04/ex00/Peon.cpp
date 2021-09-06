@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 17:05:09 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/05 17:58:04 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:09:18 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Peon::~Peon(void)
     std::cout << "Blueark..." << std::endl;
 }
 
-Peon const & Peon::operator=(Peon const & rhs)
+Peon & Peon::operator=(Peon const & rhs)
 {
     this->Victim::setName(rhs.getName());
     return (*this);

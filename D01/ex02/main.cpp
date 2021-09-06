@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 16:05:39 by liz           #+#    #+#                 */
-/*   Updated: 2020/11/28 15:11:31 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/08 11:36:35 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,26 @@
 
 int main(void)
 {
-	Zombie *zombie_1;
-	Zombie *zombie_2;
-	Zombie *stack_zombie = new Zombie("Brain eater", "Draco");
-	ZombieEvent event;
+	ZombieEvent	event;
+	Zombie *zombie1;
+	Zombie *zombie2;
 
-	srand(time(NULL));
 	event.setZombieType("Brain eater");
-	zombie_1 = event.randomChump();
-	std::cout << zombie_1->announce() << std::endl;
-	delete zombie_1;
-	std::cout << stack_zombie->announce() << std::endl;
-	delete stack_zombie;
-	event.setZombieType("Mowner");
-	zombie_2 = event.randomChump();
-	std::cout << zombie_2->announce() << std::endl;
-	delete zombie_2;
-	system("leaks zombie");
+	zombie1 = event.newZombie("Bella");
+	zombie2 = event.newZombie("Gregor");
+	std::cout << zombie1->announce() << std::endl;
+	std::cout << zombie2->announce() << std::endl;
+	delete zombie1;
+	delete zombie2;
+
+	Zombie Darla("Cryer", "Darla");
+	Zombie *zombie3;
+	zombie3 = event.randomChump();
+	std::cout << Darla.announce() << std::endl;
+	std::cout << zombie3->announce() << std::endl;
+	delete zombie3;
+
+	Zombie zombie4("Breather", "Derp");
+	std::cout << zombie4.announce() << std::endl;
 	return (0);
 }

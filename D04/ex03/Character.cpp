@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 14:26:32 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/07 14:46:24 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/15 15:40:19 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,34 @@ Character::Character(std::string name): _name(name)
 
 Character::Character(Character const & rhs)
 {
-	*this = rhs;
+	for (int i = 0; i < 4; i++)
+	{
+		this->_inventory[i] = NULL;
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (rhs._inventory[i] != NULL)
+			this->_inventory[i] = rhs._inventory[i]->clone();
+	}
+	this->_name = rhs._name;
 	return ;
 }
 
-Character const & Character::operator=(Character const & rhs)
+Character & Character::operator=(Character const & rhs)
 {
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->_inventory[i] != NULL)
 			delete this->_inventory[i];
+	}
+	for (int i = 0; i < 4; i++)
+	{
 		this->_inventory[i] = NULL;
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (rhs._inventory[i] != NULL)
+			this->_inventory[i] = rhs._inventory[i]->clone();
 	}
 	this->_name = rhs._name;
 	return (*this);
@@ -54,7 +71,6 @@ Character::~Character(void)
 	{
 		if (this->_inventory[i] != NULL)
 			delete this->_inventory[i];
-		this->_inventory[i] = NULL;
 	}
 	return ;
 }
@@ -66,15 +82,22 @@ std::string const & Character::getName(void) const
 
 void		Character::equip(AMateria* m)
 {
+	if (m == NULL)
+		return ;
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->_inventory[i] == NULL)
 		{
-			this->_inventory[i] = m;
+			this->_inventory[i] = m->clone();
 			return ;
 		}
 	}
 	std::cout << "Inventory is full" << std::endl;	
+}
+
+AMateria *Character::getMateria(int idx) const
+{
+	return (this->_inventory[idx]);
 }
 
 void		Character::unequip(int idx)

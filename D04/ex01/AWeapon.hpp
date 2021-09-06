@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:26:25 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/06 11:13:27 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:08:36 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
     AWeapon(std::string const & name, int apcost, int damage);
     AWeapon(void);
     AWeapon(AWeapon const & rhs);
-    AWeapon const & operator=(AWeapon const & rhs);
+    AWeapon & operator=(AWeapon const & rhs);
     virtual ~AWeapon(void);
 
 	std::string const getName(void) const;

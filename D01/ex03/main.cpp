@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/27 17:45:17 by liz           #+#    #+#                 */
-/*   Updated: 2020/11/28 14:48:18 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/05 17:10:30 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,9 @@
 
 int main(void)
 {
-	srand(time(NULL));
 	ZombieHorde zombie = ZombieHorde(5);
 	zombie.announce();
-	while (1)
-	{
-		
-	}
+	ZombieHorde zombie2 = ZombieHorde(3);
+	zombie2.announce();
 	return (0);
 }

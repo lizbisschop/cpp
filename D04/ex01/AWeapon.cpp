@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:31:05 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/06 11:42:06 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:09:46 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ AWeapon::~AWeapon(void)
     return ;
 }
 
-AWeapon const & AWeapon::operator=(AWeapon const & rhs)
+AWeapon & AWeapon::operator=(AWeapon const & rhs)
 {
     this->_name = rhs._name;
     this->_apcost = rhs._apcost;

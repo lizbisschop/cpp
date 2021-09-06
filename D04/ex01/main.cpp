@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/13 17:55:40 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/06 14:26:00 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/20 14:38:07 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,33 @@ int main()
     AWeapon* pr = new PlasmaRifle();
     AWeapon* pf = new PowerFist();
 	AWeapon* nokia = new Nokia();
+	AWeapon* copy(pr);
     me->equip(pr);
     std::cout << *me;
     me->equip(pf);
     me->attack(b);
 	me->equip(nokia);
     std::cout << *me;
-	me->attack(c);
 	me->recoverAP();
+	me->attack(c);
 	std::cout << *me;
 	me->attack(rakk);
-    me->equip(pr);
+    me->equip(copy);
     std::cout << *me;
     me->attack(b);
     std::cout << *me;
     me->attack(b);
     std::cout << *me;
+	me->attack(c);
+	me->equip(nokia);
+	me->attack(c);
+	std::cout << *me;
+
 
 	delete me;
 	delete nokia;
 	delete pr;
 	delete pf;
+	delete c;
     return 0;
 }

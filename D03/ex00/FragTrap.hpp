@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/29 15:16:36 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/05 15:41:52 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/04 15:45:49 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define FRAGTRAP_HPP
 
 #include <iostream>
-#include <cstdlib>
 
 class   FragTrap {
 public:

@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/02 11:34:29 by liz           #+#    #+#                 */
-/*   Updated: 2020/10/15 11:49:08 by liz           ########   odam.nl         */
+/*   Updated: 2020/12/05 17:56:43 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ public:
 	Brain(void);
 	~Brain(void);
 	std::string identify(void) const;
+	void	setAddress(void);
 
 private:
 	std::string _address;
 };
-
 
 #endif

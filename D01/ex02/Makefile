@@ -6,7 +6,7 @@
 #    By: liz <liz@student.codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/10 11:40:05 by liz           #+#    #+#                  #
-#    Updated: 2020/11/12 12:13:12 by liz           ########   odam.nl          #
+#    Updated: 2020/12/05 13:54:16 by lbisscho      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.cpp Zombie.cpp ZombieEvent.cpp
 
 HPP = Zombie.hpp ZombieEvent.hpp
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -std=c++98 -Wall -Werror -Wextra
 
 OBJ = $(SRCS:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/08 15:07:10 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/17 15:39:10 by liz           ########   odam.nl         */
+/*   Updated: 2021/01/19 15:09:01 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,18 @@ public:
 			return ("Grade is too low");
 		}
 	};
-	class GradeAlreadySigned : public std::exception {
+	class FormAlreadySigned : public std::exception {
 	public:
 		const char * what() const throw()
 		{
-			return ("Grade Already signed");
+			return ("Form Already signed");
 		}
 	};
-		class GradeNotSigned : public std::exception {
+		class FormNotSigned : public std::exception {
 	public:
 		const char * what() const throw()
 		{
-			return ("Grade is not signed");
+			return ("Form is not signed");
 		}	
 	};
 };

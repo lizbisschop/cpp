@@ -9,11 +9,11 @@ AssaultTerminator::AssaultTerminator(void)
 AssaultTerminator::AssaultTerminator(AssaultTerminator const & rhs)
 {
 	std::cout << "* teleports from space *" << std::endl;
-	*this = rhs;
+	(void)rhs;
 	return ;
 }
 
-AssaultTerminator const & AssaultTerminator::operator=(AssaultTerminator const & rhs)
+AssaultTerminator & AssaultTerminator::operator=(AssaultTerminator const & rhs)
 {
 	(void)rhs;
 	return (*this);

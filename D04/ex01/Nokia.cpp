@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/06 12:54:40 by liz           #+#    #+#                 */
-/*   Updated: 2021/01/06 12:55:47 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:09:59 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Nokia::~Nokia(void)
     return ;
 }
 
-Nokia const & Nokia::operator=(Nokia const & rhs)
+Nokia & Nokia::operator=(Nokia const & rhs)
 {
     this->setName(rhs.getName());
     this->setAPCost(rhs.getAPCost());

@@ -6,11 +6,13 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 15:54:14 by liz           #+#    #+#                 */
-/*   Updated: 2020/11/28 13:43:05 by lbisscho      ########   odam.nl         */
+/*   Updated: 2020/12/08 11:49:32 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
+
+int	rndm = 0;
 
 ZombieEvent::ZombieEvent(void)
 {
@@ -42,10 +44,13 @@ Zombie *ZombieEvent::randomChump(void)
 {
 	int index;
 	int nbr;
-	Zombie *zombie;
 	std::string names[] = {"Heather", "Carl", "George", "Frieda", "Brozo"};
 	nbr = 5;
+	if (rndm == 0)
+	{
+		rndm = 1;
+		srand(time(NULL));
+	}
 	index = rand() % nbr;
-	zombie = newZombie(names[index]);
-	return (zombie);
+	return (newZombie(names[index]));
 }

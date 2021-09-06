@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 16:46:10 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/05 17:58:34 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/18 13:55:33 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int main()
 	robert.polymorph(jim);
 	robert.polymorph(joe);
 	robert.polymorph(jacob);
+	copy.getPolymorphed();
 	return 0;
 }

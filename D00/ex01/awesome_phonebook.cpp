@@ -6,16 +6,16 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/26 12:15:01 by liz           #+#    #+#                 */
-/*   Updated: 2020/07/29 12:35:02 by liz           ########   odam.nl         */
+/*   Updated: 2020/07/30 11:02:48 by lbisscho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string.h>
 #include "phonebook.class.hpp"
 
 void 	menu(void)
 {
+	std::string input;
 	std::cout << "\e[0;36m__  _  __ ____ |  |   ____  ____   _____   ____"; std::cout << '\n'; 
 	std::cout << "\\ \\/ \\/ // __ \\|  | _/ ___\\/  _ \\ /     \\_/ __ \\ "; std::cout <<'\n';
 	std::cout << " \\     /\\  ___/|  |_\\  \\__(  <_> )  Y Y  \\  ___/ "; std::cout <<'\n';
@@ -34,7 +34,6 @@ phonebook	add(void)
 	std::string buffer;
 
 	std::cout << "Please enter the first name: ";
-	std::cin.ignore(1024, '\n');
 	std::getline(std::cin, buffer);
 	phonebook.setFirstName(buffer); 
 	std::cout << "Please enter the last name: ";
@@ -68,21 +67,6 @@ phonebook	add(void)
 	std::getline(std::cin, buffer);
 	phonebook.setDarkestSecret(buffer);
 	return (phonebook);
-}
-
-void 	exit_program(void)
-{
-	std::cout << "Thanks for using this phonebook. See you later alligator \n";
-std::cout << "\e[1;32m          .-._   _ _ _ _ _ _ _ _\n";
-std::cout << ".-''-.__.-'00  '-' ' ' ' ' ' ' ' '-.\n";
-std::cout << "'.___ '    .   .--_'-' '-' '-' _'-' '._\n";
-std::cout << " V: V 'vv-'   '_   '.       .'  _..' '.'.\n";
-std::cout << "   '=.____.=_.--'   :_.__.__:_   '.   : :\n";
-std::cout << "           (((____.-'        '-.  /   : :\n";
-std::cout << "                             (((-'\\ .' /\n";
-std::cout << "                           _____..'  .'\n";
-std::cout << "                          '-._____.-\e[0m'\n";
-	exit(0);
 }
 
 void	visit_contact(int index, phonebook *phonebook)
@@ -186,20 +170,22 @@ void	search_user(int number_users, phonebook *phonebook)
 	}
 	std::cout << "Please enter the index of the contact you would like to visit: ";
 	std::cin >> index;
-	if ((index >= 0 && index < number_users))
+	if (std::cin.good() && (index >= 0 && index < number_users))
+	{
 		visit_contact(index, phonebook);
+	}
 	else
 	{
-		std::cin.clear();
-		std::cout << "This is not a vallid index sorry...\n";
-		return ;	
+			std::cin.clear();
+			std:: cout << "\e[1;31mThis index does not excist\e[0m\n";
 	}
+	std::cin.ignore(1024, '\n');
 }
 
 int main(void)
 {
 	std::string input;
-	int maxContact = 8;
+	const int maxContact = 8;
 	phonebook phonebook[maxContact];
 	int number_users;
 
@@ -208,7 +194,7 @@ int main(void)
 	while (1)
 	{
 		std::cout << "Your choice is my command: ";
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (input == "ADD")
 		{
 			if (number_users < maxContact)
@@ -234,10 +220,23 @@ int main(void)
 			}
 		}
 		else if (input == "EXIT")
-			exit_program();
+		{
+			std::cout << "Thanks for using this phonebook. See you later alligator \n";
+			std::cout << "\e[1;32m          .-._   _ _ _ _ _ _ _ _\n";
+			std::cout << ".-''-.__.-'00  '-' ' ' ' ' ' ' ' '-.\n";
+			std::cout << "'.___ '    .   .--_'-' '-' '-' _'-' '._\n";
+			std::cout << " V: V 'vv-'   '_   '.       .'  _..' '.'.\n";
+			std::cout << "   '=.____.=_.--'   :_.__.__:_   '.   : :\n";
+			std::cout << "           (((____.-'        '-.  /   : :\n";
+			std::cout << "                             (((-'\\ .' /\n";
+			std::cout << "                           _____..'  .'\n";
+			std::cout << "                          '-._____.-\e[0m'\n";
+			break ;
+		}
 		else if (input == "SEARCH")
 			search_user(number_users, phonebook);
 		else
 			std::cout << "\e[1;31mI'm sorry this command does not excist, please try again...\e[0m\n";
 	}
+	return (0);
 }

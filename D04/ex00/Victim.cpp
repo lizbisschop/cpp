@@ -6,7 +6,7 @@
 /*   By: lbisscho <lbisscho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/12 16:51:18 by lbisscho      #+#    #+#                 */
-/*   Updated: 2021/01/04 18:09:39 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:09:40 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ std::string Victim::getName(void) const
     return (this->_name);
 }
 
-Victim const & Victim::operator=(Victim const & rhs)
+Victim & Victim::operator=(Victim const & rhs)
 {
     this->setName(rhs.getName());
     return (*this);

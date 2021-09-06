@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   PresidentialPardonForm.cpp                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: liz <liz@student.codam.nl>                   +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/01/19 15:24:44 by liz           #+#    #+#                 */
+/*   Updated: 2021/01/19 15:24:46 by liz           ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PresidentialPardonForm.hpp"
 #include <fstream>
 #include <cstring>
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target): Form("PresidentialPardonForm", 72, 45, target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target): Form("PresidentialPardonForm", 25, 5, target)
 {
 	return ;
 }
@@ -29,7 +41,7 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getSigned() != 1)
-		throw Form::GradeNotSigned();
+		throw Form::FormNotSigned();
 	else if (executor.getGrade() >= this->getGradeExecute())
 	{
 		std::cout << "Can't be executed because: ";

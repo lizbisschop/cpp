@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 13:35:09 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/21 14:59:52 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/08 17:10:53 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ AMateria::AMateria(AMateria const & rhs)
 	return ;
 }
 
-AMateria const & AMateria::operator=(AMateria const & rhs)
+AMateria & AMateria::operator=(AMateria const & rhs)
 {
 	this->setXP(rhs.getXP());
 	this->setType(rhs.getType());

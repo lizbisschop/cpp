@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 14:01:01 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/21 14:51:59 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/09 14:23:18 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ class ICharacter;
 class Ice : public AMateria {
 public:
 	Ice(void);
-	Ice(std::string const & type);
 	Ice(Ice const & rhs);
-	Ice const & operator=(Ice const & rhs);
+	Ice & operator=(Ice const & rhs);
 	virtual ~Ice(void);
 
 	Ice* clone(void) const;

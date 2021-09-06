@@ -6,7 +6,7 @@
 #    By: lbisscho <lbisscho@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/28 13:10:02 by lbisscho      #+#    #+#                  #
-#    Updated: 2020/11/28 13:11:08 by lbisscho      ########   odam.nl          #
+#    Updated: 2020/12/05 13:42:34 by lbisscho      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.cpp Pony.cpp
 
 HPP = Pony.hpp
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -std=c++98 -Wall -Werror -Wextra
 
 OBJ = $(SRCS:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: liz <liz@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 14:16:00 by liz           #+#    #+#                 */
-/*   Updated: 2020/12/20 13:20:57 by liz           ########   odam.nl         */
+/*   Updated: 2021/02/09 14:22:59 by liz           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@
 class Cure : public AMateria {
 public:
 	Cure(void);
-	Cure(std::string const & type);
 	Cure(Cure const & rhs);
-	Cure const & operator=(Cure const & rhs);
+	Cure & operator=(Cure const & rhs);
 	virtual ~Cure(void);
 
 	Cure* clone(void) const;
